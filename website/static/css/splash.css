@@ -1,87 +1,103 @@
-.navPusher {
+body:not(.light) .navPusher {
   padding-top: 102px;
   min-height: calc(100vh - 60px);
 }
 
-.navigationSlider {
+body:not(.light) .navigationSlider {
   height: 44px;
 }
 
-.navigationSlider .slidingNav ul li > a {
+body:not(.light) .navigationSlider .slidingNav ul li > a {
   height: 42px;
 }
 
-.fixedHeaderContainer {
+body:not(.light) .fixedHeaderContainer {
   min-height: 60px;
 }
 
-.fixedHeaderContainer header > a {
+body:not(.light) .fixedHeaderContainer header > a {
   height: 44px;
 }
 
 @media only screen and (min-width: 1024px) {
-  .navPusher {
+  body:not(.light) .navPusher {
     padding-top: 60px;
   }
-  .docsNavContainer {
+  body:not(.light) .docsNavContainer {
     top: 60px;
   }
-  .onPageNav {
+  body:not(.light) .onPageNav {
     min-height: calc(100vh - 102px);
     top: 102px;
   }
 }
 
 @media only screen and (max-width: 1023px) {
-  .tocActive .onPageNav {
+  body:not(.light) .tocActive .onPageNav {
     top: 150px;
   }
-  .navigationSlider .slidingNav ul {
+  body:not(.light) .navigationSlider .slidingNav ul {
     margin-top: 60px;
+  }
+  body:not(.light) .fixedHeaderContainer {
+    min-height: 102px;
   }
 }
 
-.fixedHeaderContainer {
+body:not(.light) .fixedHeaderContainer {
   border-bottom: none;
   background: transparent;
 }
 
-.fixedHeaderContainer header h3,
-.fixedHeaderContainer header .headerTitleWithLogo {
+body:not(.light) .fixedHeaderContainer header h3,
+body:not(.light) .fixedHeaderContainer header .headerTitleWithLogo {
   color: #fff;
 }
 
-@media only screen and (max-width: 1023px) {
-  .navigationSlider .slidingNav ul {
-    border-bottom: none;
-  }
+body:not(.light) .navigationSlider .slidingNav ul {
+  background: transparent;
 }
 
-.headerWrapper > header > a:nth-child(2) {
-  display: none;
+body:not(.light) .navigationSlider .slidingNav ul li > a {
+  color: #ddd;
+  -webkit-transition: color 0.2s, background 0.2s;
+  transition: color 0.2s, background 0.2s;
+}
+
+body:not(.light) .navigationSlider .slidingNav ul li > a:hover,
+body:not(.light) .navigationSlider .slidingNav ul li > a:focus,
+body:not(.light) .navigationSlider .slidingNav ul li.siteNavItemActive > a,
+body:not(.light) .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+  color: #fff;
+  background: transparent;
+}
+
+body:not(.light) .headerWrapper header .logo {
+  content: url("/img/codelet-white.svg");
+  background-repeat: no-repeat;
+}
+
+body:not(.light) .navigationSlider .slidingNav ul li.siteNavItemActive > a,
+body:not(.light) .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+  border-bottom: 2px solid #fff;
+}
+
+body:not(.light) .navPusher {
+  padding-top: 0px;
+}
+
+.fixedHeaderContainer {
+  -webkit-transition: background .3s, color .3s;
+  transition: background .3s, color .3s;
 }
 
 .navigationSlider .slidingNav ul {
   background: transparent;
 }
 
-.navigationSlider .slidingNav ul li > a {
-  color: #fff;
-  -webkit-transition: color 0.2s, background 0.2s;
-  transition: color 0.2s, background 0.2s;
-}
-
-.navigationSlider .slidingNav ul li > a:hover,
-.navigationSlider .slidingNav ul li > a:focus,
 .navigationSlider .slidingNav ul li.siteNavItemActive > a,
 .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
-  color: #454dd8;
   background: transparent;
-}
-
-.headerWrapper header .logo {
-  content: url("/img/codelet-white.svg");
-  background-repeat: no-repeat;
 }
 
 .navPusher {

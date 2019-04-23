@@ -14,8 +14,8 @@
 @include header-nav(
   $color: $header-font-color,
   $color-active: $primary-color,
-  $background: $white, 
-  $background-active: $white
+  $background: transparent, 
+  $background-active: transparent
 );
 
 @include search-bar(
@@ -96,22 +96,20 @@
       border-radius: 26px;
     }
   }
-}
 
-@media only screen and (max-width: 1023px) {
   .nav-footer .sitemap {
     flex-direction: column;
     width: calc(100% - 4em);
   }
 
-  .navigationSlider .slidingNav ul li { 
+  .navigationSlider .slidingNav ul li:not(.reactNavSearchWrapper) { 
     padding-left: 0px;
     padding-right: 0px;
   }
-}
 
-@media only screen and (max-width: 736px) {
-
+  .fixedHeaderContainer { 
+    height: 102px;
+  }
 }
 
 @media only screen and (min-width: 1024px) {

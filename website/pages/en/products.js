@@ -10,12 +10,19 @@ const styles = [
   '/css/splash.css'
 ];
 
+const scripts = [
+  '/js/splash.js'
+];
+
 const pageDescription = '「Codelet 基础框架」提供了高质量的开发系统所需的基础功能，包括认证、授权、消息、权限、人员、组织、安全等，帮助团队摆脱基础功能的困扰，将更多的精力投入到具体的业务功能中去。';
 
 const pageTitle = '聚焦核心业务，摆脱基础设施困扰';
 
 class ProductsSplash extends React.Component {
   render() {
+
+    const {siteConfig} = this.props;
+
     const SplashContainer = props => (
       <div className="splash-container">
         <div className="splash-fade">
@@ -25,16 +32,31 @@ class ProductsSplash extends React.Component {
     );
 
     const SplashTitle = props => (
-      <h2 className="splash-title center">
+      <h2 className="splash-title">
         { props.title }
         <small>{props.description}</small>
       </h2>
+    );
+
+    const PromoSection = props => (
+      <div className="section promo-section">
+        <div className="promo-row">{props.children}</div>
+      </div>
+    );
+
+    const Button = props => (
+      <a className={ 'button button-circle home-button' } href={props.href} target={props.target}>
+        {props.children}
+      </a>
     );
 
     return (
       <SplashContainer>
         <div className="wrapper splash-wrapper">
           <SplashTitle title={pageTitle} description={pageDescription} />
+          <PromoSection>
+            <Button href={ siteConfig.repoUrl } target="_blank">立即体验</Button>
+          </PromoSection>
         </div>
       </SplashContainer>
     );
@@ -52,6 +74,7 @@ class Products extends React.Component {
     const Product = props => (
       <div className="product-item">
         <div className={!!props.default ? 'product-block show-tag' : 'product-block'}>
+          <div className="product-background"></div>
           <div className="product-img"><img src={props.img} /></div>
           <div className="product-name">{props.name}</div>
           <div className="product-description" dangerouslySetInnerHTML={{ __html: props.description }}></div>
@@ -82,7 +105,7 @@ class Products extends React.Component {
         {styles.map(url => (
           <link rel="stylesheet" type="text/css" href={url} key={url} />
         ))}
-        <ProductsSplash />
+        <ProductsSplash siteConfig={siteConfig} />
         <ProductsWrapper>
           <ProductGroup title="后&nbsp;端" key="后端">
             {
@@ -111,6 +134,9 @@ class Products extends React.Component {
             }
           </ProductGroup>
         </ProductsWrapper>
+        {scripts.map(url => (
+          <script src={url}></script>
+        ))}
       </div>
     );
   }

@@ -7,7 +7,7 @@ const styles = [
 ];
 
 const scripts = [
-  '/js/home.js'
+  '/js/splash.js'
 ];
 
 class HomeSplash extends React.Component {
@@ -29,25 +29,10 @@ class HomeSplash extends React.Component {
       </h2>
     );
 
-    const PromoSection = props => (
-      <div className="section promo-section">
-        <div className="promo-row">{props.children}</div>
-      </div>
-    );
-
-    const Button = props => (
-      <a className={ 'button button-circle home-button'} href={props.href} target={props.target}>
-        {props.children}
-      </a>
-    );
-
     return (
       <SplashContainer>
         <div className="wrapper splash-wrapper">
           <SplashTitle title={siteConfig.tagline} description={siteConfig.description} />
-          <PromoSection>
-            <Button href={ siteConfig.repoUrl } target="_blank">立即体验</Button>
-          </PromoSection>
         </div>
       </SplashContainer>
     );

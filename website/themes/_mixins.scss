@@ -49,6 +49,10 @@
     .navigationSlider .slidingNav ul { 
       margin-top: $size;
     }
+
+    .fixedHeaderContainer {
+      min-height: $size + $nav-height;
+    }
   }
 }
 
@@ -67,12 +71,6 @@
     header h3,
     header .headerTitleWithLogo { 
       color: $color;
-    }
-  }
-
-  @media only screen and (max-width: 1023px) {
-    .navigationSlider .slidingNav ul {
-      border-bottom: $border;
     }
   }
 }
@@ -96,7 +94,7 @@
     li > a:focus, 
     li.siteNavItemActive > a,
     li.siteNavGroupActive > a { 
-      color: $primary-color;
+      color: $color-active;
       background: $background-active;
     }
   }
