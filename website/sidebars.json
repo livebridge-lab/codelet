@@ -1,10 +1,23 @@
 {
   "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+    "Docusaurus": ["doc1", "doc2", "doc3"]
   },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
+  "features": { 
+    "Hello": [
+      "features/index"
+    ]
+  },
+  "nodejs-mybatis-mysql": {
+    "First Category": [
+      "nodejs-mybatis-mysql/index", 
+      "nodejs-mybatis-mysql/install"
+    ]
+  },
+  "springboot-mybatis-mysql": { 
+    "Getting Starter": [
+      "springboot-mybatis-mysql/index", 
+      "springboot-mybatis-mysql/intro", 
+      "springboot-mybatis-mysql/install"
+    ]
   }
 }

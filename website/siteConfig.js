@@ -8,21 +8,9 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
-// List of projects/orgs using your project for the users page.
-const users = [
-  {
-    caption: 'User1',
-    // You will need to prepend the image path with your baseUrl
-    // if it is not '/', like: '/test-site/img/docusaurus.svg'.
-    image: '/img/docusaurus.svg',
-    infoLink: 'https://www.facebook.com',
-    pinned: true,
-  },
-];
-
 const siteConfig = {
   title: 'Codelet', // Title for your website.
-  tagline: '聚焦核心业务，摆脱基础设施困扰',
+  tagline: '一个能节省项目开发成本、能找到高质量功能实现的网站',
   url: 'https://your-docusaurus-test-site.com', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -34,31 +22,33 @@ const siteConfig = {
   // Used for publishing and more
   projectName: 'codelet',
   organizationName: 'facebook',
-  description: '「Codelet 基础框架」提供了高质量的开发系统所需的基础功能，包括认证、授权、消息、权限、人员、组织、安全等，帮助团队摆脱基础功能的困扰，将更多的精力投入到具体的业务功能中去。',
+  description: '「Codelet」提供了基于主流开源技术的系统功能实现，拿来即用。这些实现从真实项目中积累迭代而来，具有良好的系统完整性、可用性和维护性。',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: 'doc1', label: 'Docs' },
-    { doc: 'doc4', label: 'API' },
-    { page: 'help', label: 'Help' },
+    // { doc: 'doc1', label: '产品' },
+    { page: 'products', label: '产品' },
+    { doc: 'features/index', label: '功能' },
+    { href: 'https://github.com', label: '社区' },
+    // { doc: 'doc4', label: 'API' },
+    // { page: 'help', label: 'Help' },
     // {blog: true, label: 'Blog'},
     { search: true }
   ],
 
-
   algolia: {
     apiKey: 'my-api-key',
     indexName: 'my-index-name',
-    algoliaOptions: {} // Optional, if provided by Algolia
+    algoliaOptions: { } // Optional, if provided by Algolia
   },
 
   /* path to images for header/footer */
-  headerIcon: 'img/codelet-white.svg',
+  headerIcon: 'img/codelet.svg',
   footerIcon: 'img/codelet.svg',
-  favicon: 'img/favicon.png',
+  favicon: 'img/favicon-2.png',
 
   /* Colors for website */
   colors: {
@@ -81,7 +71,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
+  copyright: `Copyright © ${new Date().getFullYear()} CodeDance MIT License 辽ICP备8888888号-1`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
@@ -89,16 +79,13 @@ const siteConfig = {
   },
 
   // Add custom scripts here that would be placed in <script> tags.
-  scripts: ['https://buttons.github.io/buttons.js'],
+  scripts: ['/js/sidebar.js'],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
+  
   // No .html extensions for paths.
   cleanUrl: true,
-
-  // Open Graph and Twitter card images.
-  ogImage: 'img/docusaurus.png',
-  twitterImage: 'img/docusaurus.png',
 
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,
@@ -112,7 +99,7 @@ const siteConfig = {
 
   scrollToTop: false, 
 
-  separateCSS: ['/home-css/home.css']
+  separateCss: ['static/css/home', 'static/css/products', 'static/css/splash']
 };
 
 module.exports = siteConfig;

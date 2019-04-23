@@ -1,0 +1,171 @@
+@import '../../themes/variables';
+@import '../../themes/mixins';
+
+.products-wrapper {
+  max-width: 1020px;
+  padding: 2em 0;
+}
+
+.product-group {
+  padding: 20px 30px;
+
+  .product-group-title {
+    text-align: center;
+    padding: 1em 0;
+    margin-bottom: 2em;
+    span {
+      width: 180px;
+      padding: .5em 0;
+      border-radius: 50px;
+      display: inline-block;
+      position: relative;
+      color: $primary-color;
+      text-align: center;
+      box-shadow: 0px 2px 5px #ddd;
+      font-weight: 300;
+
+      &::after, 
+      &::before { 
+        position: absolute;
+        height: 2px;
+        width: 30px;
+        content: "";
+        top: 50%;
+        margin-top: -1px;
+        border-radius: 2px;
+      }
+      
+      &::after { 
+        right: 30px;
+        background: linear-gradient(to right, $primary-color, $white);        
+      }
+
+      &::before { 
+        left: 30px;
+        background: linear-gradient(to right, $white, $primary-color);        
+      }
+    }
+  }
+
+  .product-items {
+    display: flex;
+    .product-item {
+      flex: 1;
+      text-align: center;
+
+      .product-block {
+        height: 380px;
+        width: 260px;
+        display: inline-block;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px #e5e5e5;
+        transition: background .3s, margin-top .3s, box-shadow .3s, color .3s;
+        position: relative;
+        &:hover { 
+          background: rgba($primary-color, .7);
+          margin-top: -10px;
+          box-shadow: 0px 0px 10px $primary-color;
+          color: $white;
+
+
+          .product-link-button { 
+            display: inline-block;
+          }
+
+          .product-name { 
+            color: inherit;
+          }
+
+          .product-name::after { 
+            background-color: $white;
+          }
+        }
+        
+        &.show-tag { 
+          &::after {
+            position: absolute;
+            top: 16px;
+            left: -4px;
+            content: "官方推荐";
+            color: $white;
+            font-size: 12px;
+            line-height: 20px;
+            width: 60px;
+            background-color: $primary-color;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+          }
+  
+          &::before { 
+            position: absolute;
+            left: -4px;
+            top: 12px;
+            content: "";
+            font-size: 0;
+            border: 2px solid transparent;
+            z-index: 0;
+            border-bottom: 2px solid $primary-color-dark;
+            border-right: 2px solid $primary-color-dark;
+          }
+        }
+      }
+
+      .product-name {
+        font-size: 14px;
+        margin: 1em 0;
+        position: relative;
+        padding: 1em 0;
+        font-weight: 300;
+        color: #666;
+
+        &::after { 
+          content: "";
+          position: absolute;
+          bottom: 0;
+          height: 2px;
+          width: 50px;
+          background-color: $primary-color;
+          left: 50%;
+          margin-left: -25px;
+
+          transition: background .3s;
+        }
+      }
+
+      .product-description {
+        font-size: 16px;
+      }
+
+      .product-link-wrapper { 
+        padding: 1em 0;
+        margin-top: 1em;
+      }
+
+      .product-link-button { 
+        display: none;
+        width: 160px;
+        background-color: #d4377f;
+        color: $white;
+
+        &::after { 
+          content: none;
+        }
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  
+}
+
+@media only screen and (min-width: 1500px) {
+  
+}
+

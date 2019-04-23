@@ -6,7 +6,8 @@
     "publish-gh-pages": "docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",
-    "rename-version": "docusaurus-rename-version"
+    "rename-version": "docusaurus-rename-version", 
+    "publish": "scp -r ./build/codelet/* root@39.106.49.60:/var/www/codelet-website/"
   },
   "devDependencies": {
     "docusaurus": "^1.8.1"

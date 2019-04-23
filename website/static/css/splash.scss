@@ -1,0 +1,124 @@
+@import '../../themes/variables';
+@import '../../themes/mixins';
+
+@include header(
+  $color: $white, 
+  $border: none, 
+  $background: transparent, 
+  $height: 60px
+);
+
+.headerWrapper > header > a:nth-child(2) {
+  display: none;
+}
+
+@include header-nav(
+  $color: $white,
+  $color-active: $primary-color,
+  $background: transparent, 
+  $background-active: transparent
+);
+
+.headerWrapper header .logo { 
+  content: url('/img/codelet-white.svg');
+  background-repeat: no-repeat;
+}
+
+.navPusher {
+  padding-top: 0px;
+}
+
+.splash-container {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, $primary-color-dark, $primary-color);
+  box-shadow: 0px 0px 10px #2e014e;
+  padding-top: 60px;
+}
+
+.splash-fade {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: url("/img/banner.png");
+  background-position: center center;
+  background-size: auto 100%;
+}
+
+.splash-title {
+  font-size: 260%;
+  margin: 0;
+  padding: 2.5em 0 1em;
+  font-weight: 400;
+  color: #fff;
+
+  &.center {
+    text-align: center;
+  }
+}
+
+.splash-title > small {
+  display: inline-block;
+  font-weight: 100;
+  font-size: 40%;
+  line-height: 1.5em;
+  margin: 2em 0 1em;
+  color: #fff;
+  max-width: 600px;
+}
+
+.splash-wrapper {
+  min-height: 500px;
+  position: relative;
+}
+
+@media only screen and (max-width: 1023px) {
+  .splash-container {
+    text-align: center;
+  }
+
+  .splash-wrapper {
+    min-height: 450px;
+  }
+
+  .splash-title {
+    font-size: 250%;
+  }
+
+  .splash-title > small {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .navPusher {
+    padding-top: 0px;
+  }
+
+  .splash-container {
+    max-height: 800px;
+  }
+}
+
+@media only screen and (max-width: 736px) {
+  .splash-title {
+    font-size: 200%;
+  }
+
+  .splash-title > small {
+    margin: 2em 2em 1em;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .splash-wrapper {
+    max-width: 1100px;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .splash-wrapper {
+    max-width: 1200px;
+  }
+}

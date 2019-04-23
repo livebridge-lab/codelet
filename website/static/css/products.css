@@ -1,0 +1,171 @@
+@charset "UTF-8";
+.products-wrapper {
+  max-width: 1020px;
+  padding: 2em 0;
+}
+
+.product-group {
+  padding: 20px 30px;
+}
+
+.product-group .product-group-title {
+  text-align: center;
+  padding: 1em 0;
+  margin-bottom: 2em;
+}
+
+.product-group .product-group-title span {
+  width: 180px;
+  padding: .5em 0;
+  border-radius: 50px;
+  display: inline-block;
+  position: relative;
+  color: #454dd8;
+  text-align: center;
+  -webkit-box-shadow: 0px 2px 5px #ddd;
+          box-shadow: 0px 2px 5px #ddd;
+  font-weight: 300;
+}
+
+.product-group .product-group-title span::after, .product-group .product-group-title span::before {
+  position: absolute;
+  height: 2px;
+  width: 30px;
+  content: "";
+  top: 50%;
+  margin-top: -1px;
+  border-radius: 2px;
+}
+
+.product-group .product-group-title span::after {
+  right: 30px;
+  background: -webkit-gradient(linear, left top, right top, from(#454dd8), to(#fff));
+  background: linear-gradient(to right, #454dd8, #fff);
+}
+
+.product-group .product-group-title span::before {
+  left: 30px;
+  background: -webkit-gradient(linear, left top, right top, from(#fff), to(#454dd8));
+  background: linear-gradient(to right, #fff, #454dd8);
+}
+
+.product-group .product-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.product-group .product-items .product-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+
+.product-group .product-items .product-item .product-block {
+  height: 380px;
+  width: 260px;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 10px #e5e5e5;
+          box-shadow: 0px 0px 10px #e5e5e5;
+  -webkit-transition: background .3s, margin-top .3s, color .3s, -webkit-box-shadow .3s;
+  transition: background .3s, margin-top .3s, color .3s, -webkit-box-shadow .3s;
+  transition: background .3s, margin-top .3s, box-shadow .3s, color .3s;
+  transition: background .3s, margin-top .3s, box-shadow .3s, color .3s, -webkit-box-shadow .3s;
+  position: relative;
+}
+
+.product-group .product-items .product-item .product-block:hover {
+  background: rgba(69, 77, 216, 0.7);
+  margin-top: -10px;
+  -webkit-box-shadow: 0px 0px 10px #454dd8;
+          box-shadow: 0px 0px 10px #454dd8;
+  color: #fff;
+}
+
+.product-group .product-items .product-item .product-block:hover .product-link-button {
+  display: inline-block;
+}
+
+.product-group .product-items .product-item .product-block:hover .product-name {
+  color: inherit;
+}
+
+.product-group .product-items .product-item .product-block:hover .product-name::after {
+  background-color: #fff;
+}
+
+.product-group .product-items .product-item .product-block.show-tag::after {
+  position: absolute;
+  top: 16px;
+  left: -4px;
+  content: "官方推荐";
+  color: #fff;
+  font-size: 12px;
+  line-height: 20px;
+  width: 60px;
+  background-color: #454dd8;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.product-group .product-items .product-item .product-block.show-tag::before {
+  position: absolute;
+  left: -4px;
+  top: 12px;
+  content: "";
+  font-size: 0;
+  border: 2px solid transparent;
+  z-index: 0;
+  border-bottom: 2px solid #2e014e;
+  border-right: 2px solid #2e014e;
+}
+
+.product-group .product-items .product-item .product-name {
+  font-size: 14px;
+  margin: 1em 0;
+  position: relative;
+  padding: 1em 0;
+  font-weight: 300;
+  color: #666;
+}
+
+.product-group .product-items .product-item .product-name::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 50px;
+  background-color: #454dd8;
+  left: 50%;
+  margin-left: -25px;
+  -webkit-transition: background .3s;
+  transition: background .3s;
+}
+
+.product-group .product-items .product-item .product-description {
+  font-size: 16px;
+}
+
+.product-group .product-items .product-item .product-link-wrapper {
+  padding: 1em 0;
+  margin-top: 1em;
+}
+
+.product-group .product-items .product-item .product-link-button {
+  display: none;
+  width: 160px;
+  background-color: #d4377f;
+  color: #fff;
+}
+
+.product-group .product-items .product-item .product-link-button::after {
+  content: none;
+}
+
+.product-group .product-items .product-item img {
+  width: 100px;
+  height: 100px;
+}
