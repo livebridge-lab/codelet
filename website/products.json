@@ -1,3 +1,44 @@
 {
-  
+  "backend": [
+    {
+      "name": "Node.js + Menuet + MongoDB",
+      "description": "互联网应用首选<br>轻量，高效",
+      "dir": "nodejs-menuet-mongodb",
+      "img": "/img/WechatIMG42.jpeg",
+      "default": true
+    },
+    {
+      "name": "SpringBoot + MyBatis + MySQL",
+      "description": "企业级应用<br>易学，上手快",
+      "dir": "springboot-mybatis-mysql",
+      "img": "/img/WechatIMG42.jpeg"
+    },
+    {
+      "name": "SpringBoot + Hibernate + MySQL",
+      "description": "企业级应用<br>功能强大，有一定学习曲线",
+      "dir": "springboot-hibernate-mysql",
+      "img": "/img/WechatIMG42.jpeg"
+    }
+  ],
+  "frontend": [
+    {
+      "name": "Angular + ng-tangram",
+      "description": "企业级应用<br>谷歌站台",
+      "dir": "angular-ng-tangram",
+      "img": "/img/WechatIMG42.jpeg",
+      "default": true
+    },
+    {
+      "name": "Vue + ElementUI",
+      "description": "轻量级应用<br>上手快",
+      "dir": "vue-elementui",
+      "img": "/img/WechatIMG42.jpeg"
+    },
+    {
+      "name": "React + AntDesign",
+      "description": "企业级应用<br>Facebook站台",
+      "dir": "react-ant-desin",
+      "img": "/img/WechatIMG42.jpeg"
+    }
+  ]
 }
