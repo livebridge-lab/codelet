@@ -11,7 +11,7 @@
 const siteConfig = {
   title: 'Codelet', // Title for your website.
   tagline: '一个能节省项目开发成本、能找到高质量功能实现的网站',
-  url: 'https://your-docusaurus-test-site.com', // Your website URL
+  url: 'https://codelet.proding.net', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
@@ -40,8 +40,8 @@ const siteConfig = {
   ],
 
   algolia: {
-    apiKey: 'my-api-key',
-    indexName: 'my-index-name',
+    apiKey: '651279d797a3f4e9d32fb68c56c62c8b',
+    indexName: 'menuet_proding',
     algoliaOptions: { } // Optional, if provided by Algolia
   },
 
@@ -52,8 +52,8 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#2e014e',
-    secondaryColor: '#48305b',
+    primaryColor: '#48305b',
+    secondaryColor: '#2e014e',
   },
 
   /* Custom fonts for website */
@@ -92,6 +92,8 @@ const siteConfig = {
 
   // Show documentation's last update time.
   // enableUpdateTime: true,
+
+  docsSideNavCollapsible: true,
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
