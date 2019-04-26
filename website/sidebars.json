@@ -5,6 +5,14 @@
   "features": { 
     "Hello": [
       "features/index"
+    ],
+    "积分系统": [
+      "features/reward-points-meaning",
+      "features/reward-points-system-compositions",
+      "features/reward-points-system-design-architecture",
+      "features/reward-points-system-design-ER",
+      "features/reward-points-system-design-flow",
+      "features/reward-points-system-design-DB"
     ]
   },
   "nodejs-mybatis-mysql": {
@@ -13,7 +21,7 @@
       "nodejs-mybatis-mysql/install"
     ]
   },
-  "springboot-mybatis-mysql": { 
+  "springboot-mybatis-mysql": {
     "Getting Starter": [
       "springboot-mybatis-mysql/index", 
       "springboot-mybatis-mysql/intro", 
