@@ -30,8 +30,9 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     // { doc: 'doc1', label: '产品' },
-    { page: 'products', label: '产品' },
-    { doc: 'features/index', label: '功能' },
+    { page: 'frameworks', label: '基础框架' },
+    { page: 'business', label: '业务系统' },
+    { doc: 'features/index', label: '功能模块' },
     { href: 'https://github.com', label: '社区' },
     // { doc: 'doc4', label: 'API' },
     // { page: 'help', label: 'Help' },
@@ -101,7 +102,7 @@ const siteConfig = {
 
   scrollToTop: false, 
 
-  separateCss: ['static/css/home', 'static/css/products', 'static/css/splash']
+  separateCss: ['static/css/home', 'static/css/frameworks', 'static/css/splash']
 };
 
 module.exports = siteConfig;

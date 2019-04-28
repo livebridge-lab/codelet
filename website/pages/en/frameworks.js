@@ -3,10 +3,10 @@ const React = require('react');
 
 const CWD = process.cwd();
 
-const products = require(`${CWD}/products.json`);
+const frameworks = require(`${CWD}/frameworks.json`);
 
 const styles = [
-  '/css/products.css',
+  '/css/frameworks.css',
   '/css/splash.css'
 ];
 
@@ -18,7 +18,7 @@ const pageDescription = '「Codelet 基础框架」提供了高质量的开发�
 
 const pageTitle = '聚焦核心业务，摆脱基础设施困扰';
 
-class ProductsSplash extends React.Component {
+class FrameworksSplash extends React.Component {
   render() {
 
     const {siteConfig} = this.props;
@@ -63,7 +63,7 @@ class ProductsSplash extends React.Component {
   }
 }
 
-class Products extends React.Component {
+class Frameworks extends React.Component {
   render() {
 
     const siteConfig = this.props.config;
@@ -71,32 +71,32 @@ class Products extends React.Component {
     const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
     const docUrl = doc => `${baseUrl}${docsPart}${doc}`;
 
-    const Product = props => (
-      <div className="product-item">
-        <div className={!!props.default ? 'product-block show-tag' : 'product-block'}>
-          <div className="product-background"></div>
-          <div className="product-img"><img src={props.img} /></div>
-          <div className="product-name">{props.name}</div>
-          <div className="product-description" dangerouslySetInnerHTML={{ __html: props.description }}></div>
-          <div className="product-link-wrapper">
-            <a className="button button-circle product-link-button" href={props.url}>查看详情</a>
+    const Framework = props => (
+      <div className="framework-item">
+        <div className={!!props.default ? 'framework-block show-tag' : 'framework-block'}>
+          <div className="framework-background"></div>
+          <div className="framework-img"><img src={props.img} /></div>
+          <div className="framework-name">{props.name}</div>
+          <div className="framework-description" dangerouslySetInnerHTML={{ __html: props.description }}></div>
+          <div className="framework-link-wrapper">
+            <a className="button button-circle framework-link-button" href={props.url}>查看详情</a>
           </div>
         </div>
       </div>
     );
 
-    const ProductGroup = props => (
-      <div className="product-group">
-        <div className="product-group-title">
+    const FrameworkGroup = props => (
+      <div className="framework-group">
+        <div className="framework-group-title">
           <span>{props.title}</span>
         </div>
-        <div className="product-items">{props.children}</div>
+        <div className="framework-items">{props.children}</div>
       </div>
     );
 
-    const ProductsWrapper = props => (
-      <div className="products-container">
-        <div className="products-wrapper wrapper">{props.children}</div>
+    const FrameworksWrapper = props => (
+      <div className="frameworks-container">
+        <div className="frameworks-wrapper wrapper">{props.children}</div>
       </div>
     );
 
@@ -105,12 +105,12 @@ class Products extends React.Component {
         {styles.map(url => (
           <link rel="stylesheet" type="text/css" href={url} key={url} />
         ))}
-        <ProductsSplash siteConfig={siteConfig} />
-        <ProductsWrapper>
-          <ProductGroup title="后&nbsp;端" key="后端">
+        <FrameworksSplash siteConfig={siteConfig} />
+        <FrameworksWrapper>
+          <FrameworkGroup title="后&nbsp;端" key="后端">
             {
-              products.backend.map(data => 
-                <Product
+              frameworks.backend.map(data => 
+                <Framework
                   key={data.name}
                   name={data.name}
                   description={data.description}
@@ -119,11 +119,11 @@ class Products extends React.Component {
                   default={data.default} />
               )
             }
-          </ProductGroup>
-          <ProductGroup title="前&nbsp;端" key="前端">
+          </FrameworkGroup>
+          <FrameworkGroup title="前&nbsp;端" key="前端">
             {
-              products.frontend.map(data => 
-                <Product
+              frameworks.frontend.map(data => 
+                <Framework
                   key={data.name}
                   name={data.name}
                   description={data.description}
@@ -132,8 +132,8 @@ class Products extends React.Component {
                   default={data.default} />
               )
             }
-          </ProductGroup>
-        </ProductsWrapper>
+          </FrameworkGroup>
+        </FrameworksWrapper>
         {scripts.map(url => (
           <script src={url}></script>
         ))}
@@ -142,6 +142,6 @@ class Products extends React.Component {
   }
 }
 
-Products.title = 'Codelet · 聚焦核心业务，摆脱基础设施困扰';
+Frameworks.title = 'Codelet · 聚焦核心业务，摆脱基础设施困扰';
 
-module.exports = Products;
+module.exports = Frameworks;

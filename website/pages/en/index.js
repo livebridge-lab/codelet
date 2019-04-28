@@ -43,8 +43,8 @@ class Index extends React.Component {
   render() {
     const {config: siteConfig} = this.props;
 
-    const ProductsContainer = props => (
-      <div className="product-container">
+    const FrameworksContainer = props => (
+      <div className="framework-container">
         {props.children}
       </div>
     )
@@ -55,7 +55,7 @@ class Index extends React.Component {
           <link rel="stylesheet" type="text/css" href={url} key={url} />
         ))}
         <HomeSplash siteConfig={siteConfig} />
-        <ProductsContainer></ProductsContainer>
+        <FrameworksContainer></FrameworksContainer>
         {scripts.map(url => (
           <script src={url}></script>
         ))}

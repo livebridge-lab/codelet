@@ -1,15 +1,15 @@
 @import '../../themes/variables';
 @import '../../themes/mixins';
 
-.products-wrapper {
+.frameworks-wrapper {
   max-width: 1020px;
   padding: 2em 0;
 }
 
-.product-group {
+.framework-group {
   padding: 20px 30px;
 
-  .product-group-title {
+  .framework-group-title {
     text-align: center;
     padding: 1em 0;
     margin-bottom: 2em;
@@ -47,13 +47,13 @@
     }
   }
 
-  .product-items {
+  .framework-items {
     display: flex;
-    .product-item {
+    .framework-item {
       flex: 1;
       text-align: center;
 
-      .product-block {
+      .framework-block {
         height: 380px;
         width: 260px;
         display: inline-block;
@@ -64,7 +64,7 @@
         position: relative;
         text-align: center;
         background: linear-gradient(to bottom, #5a36c7, #727bf0);
-        .product-background { 
+        .framework-background { 
           position: absolute;
           z-index: 0;
           width: 100%;
@@ -84,19 +84,19 @@
           box-shadow: 0px 0px 10px $primary-color;
           color: $white;
 
-          .product-background { 
+          .framework-background { 
             background: transparent;
           }
 
-          .product-link-button { 
+          .framework-link-button { 
             display: inline-block;
           }
 
-          .product-name { 
+          .framework-name { 
             color: inherit;
           }
 
-          .product-name::after { 
+          .framework-name::after { 
             background-color: $white;
           }
         }
@@ -132,7 +132,7 @@
         }
       }
 
-      .product-name {
+      .framework-name {
         font-size: 14px;
         margin: 1em 0;
         position: relative;
@@ -153,17 +153,17 @@
         }
       }
 
-      .product-description {
+      .framework-description {
         font-size: 16px;
         position: relative;
       }
 
-      .product-link-wrapper { 
+      .framework-link-wrapper { 
         padding: 1em 0;
         margin-top: 1em;
       }
 
-      .product-link-button { 
+      .framework-link-button { 
         display: none;
         width: 160px;
         background-color: #d4377f;
@@ -174,7 +174,7 @@
         }
       }
 
-      .product-img { 
+      .framework-img { 
         width: 100px;
         height: 100px;
         display: inline-block;
@@ -233,12 +233,12 @@
 }
 
 @media only screen and (max-width: 899px) {
-  .product-group { 
-    .product-items { 
+  .framework-group { 
+    .framework-items { 
       display: block;
-      .product-item { 
+      .framework-item { 
         margin-bottom: 2em;
-        .product-block { 
+        .framework-block { 
           width: 100%;
           max-width: 360px;
         }

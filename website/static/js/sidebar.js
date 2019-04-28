@@ -9,11 +9,11 @@ window.addEventListener('load', function () {
   ];
 
   var slidingNav = document.getElementsByClassName('slidingNav');
-  var productLink = slidingNav[0].querySelector('ul a[href="/products"]');
+  var frameworksLink = slidingNav[0].querySelector('ul a[href="/frameworks"]');
   var isActive = docDirs.some(function (dir) {
     return location.href.indexOf(dir) >= 0;
   })
   if (isActive) {
-    productLink.parentNode.classList.add('siteNavItemActive');
+    frameworksLink.parentNode.classList.add('siteNavItemActive');
   }
 });
