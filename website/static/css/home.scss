@@ -3,5 +3,15 @@
 
 
 .home-splash-container {
-  background: linear-gradient(to right, #172252, #172252) !important;
+  background: linear-gradient(to right, #162055, #162055) !important;
+  box-shadow: 0px 0px 10px #162055 !important;
+}
+
+
+.splash-fade {
+  background-image: url("/img/banner-home.png") !important;
+}
+
+.splash-title {
+  text-align: center;
 }

@@ -1,0 +1,32 @@
+ [{
+     "title": "电商（B2B2C）",
+     "description": "智能仓储管理系统<br>专业化、 精细化的电商仓储管理服务 ",
+     "dir": "",
+     "img": "/img/business.svg",
+     "default": true
+   },
+   {
+     "title": "SaaS系统",
+     "description": "智能仓储管理系统<br>专业化、 精细化的电商仓储管理服务 ",
+     "dir": "",
+     "img": "/img/saas.svg"
+   },
+   {
+     "title": "小程序独立部署",
+     "description": "智能仓储管理系统<br>专业化、 精细化的电商仓储管理服务 ",
+     "dir": "",
+     "img": "/img/wxapp.svg"
+   },
+   {
+     "title": "在线付费知识系统",
+     "description": "智能仓储管理系统<br>专业化、 精细化的电商仓储管理服务 ",
+     "dir": "",
+     "img": "/img/base.svg"
+   },
+   {
+     "title": "物联网高并发消息系统",
+     "description": "智能仓储管理系统<br>专业化、 精细化的电商仓储管理服务 ",
+     "dir": "",
+     "img": "/img/iot.svg"
+   }
+ ]

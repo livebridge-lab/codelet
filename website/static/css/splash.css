@@ -122,7 +122,7 @@ body:not(.light) .navPusher {
 .splash-fade {
   width: 100%;
   background-repeat: no-repeat;
-  background-image: url("/img/banner.png");
+  background-image: url("/img/banner-frameworks.png");
   background-position: center center;
   background-size: auto 100%;
 }
@@ -131,7 +131,7 @@ body:not(.light) .navPusher {
   font-size: 260%;
   margin: 0;
   padding: 2.5em 0 1em;
-  font-weight: 400;
+  font-weight: 100;
   color: #fff;
 }
 

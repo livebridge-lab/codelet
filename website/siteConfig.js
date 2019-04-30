@@ -102,7 +102,7 @@ const siteConfig = {
 
   scrollToTop: false, 
 
-  separateCss: ['static/css/home', 'static/css/frameworks', 'static/css/splash']
+  separateCss: ['static/css/home', 'static/css/frameworks', 'static/css/splash', 'static/css/business']
 };
 
 module.exports = siteConfig;

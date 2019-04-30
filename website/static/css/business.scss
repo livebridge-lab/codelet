@@ -1,0 +1,226 @@
+@import '../../themes/variables';
+@import '../../themes/mixins';
+
+
+.home-splash-container {
+  background: linear-gradient(to right, #162055, #162055) !important;
+  box-shadow: 0px 0px 10px #162055 !important;
+}
+
+
+.splash-fade {
+  background-image: url("/img/banner-business.png") !important;
+}
+
+.Business-wrapper {
+  max-width: 1020px;
+  padding: 2em 0;
+}
+
+.business-group {
+  padding: 20px 30px;
+
+  .business-group-title {
+    text-align: center;
+    padding: 1em 0;
+    margin-bottom: 2em;
+
+    span {
+      padding: .5em 74px;
+      border-radius: 50px;
+      display: inline-block;
+      position: relative;
+      color: $black;
+      text-align: center;
+      font-weight: 300;
+      font-size: 28px;
+
+      &::after,
+      &::before {
+        position: absolute;
+        height: 2px;
+        width: 30px;
+        content: "";
+        top: 50%;
+        margin-top: -1px;
+        border-radius: 2px;
+      }
+
+      &::after {
+        right: 30px;
+        background: linear-gradient(to right, $medium-gray, $medium-gray);
+      }
+
+      &::before {
+        left: 30px;
+        background: linear-gradient(to right, $medium-gray, $medium-gray);
+      }
+    }
+  }
+
+  .business-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    .business-item {
+    
+      text-align: center;
+      width: 33.3%;
+      margin-bottom: 40px;
+
+      .business-block {
+        height: 250px;
+        width: 284px;
+        margin: 0 auto;
+        display: inline-block;
+        padding: 20px;
+        transition: background .3s, margin-top .3s, box-shadow .3s, color .3s;
+        position: relative;
+        text-align: left;
+
+        .business-background {
+          position: absolute;
+          z-index: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          left: 0;
+          top: 0;
+          background: $white;
+          transition: background .3s;
+
+        }
+
+        &:hover {
+
+          box-shadow: 10px 10px 10px #e5e5e5;
+          color: $white;
+
+          .business-link-button {
+            display: inline-block;
+            color: $primary-color;
+            position: relative;
+            z-index: 999;
+            font-weight: 100;
+            font-size: 14px;
+            cursor: pointer;
+          }
+
+        }
+      }
+
+      .business-name {
+        font-size: 20px;
+        position: relative;
+        padding: 1em 0;
+        font-weight: 300;
+        color: $black;
+      }
+
+      .business-description {
+        font-size: 14px;
+        position: relative;
+        color: $black;
+        font-weight: 100;
+      }
+
+      .business-link-wrapper {
+        padding: 1em 0;
+        margin-top: 0.5em;
+      }
+
+      .business-link-button {
+        display: none;
+        color: $white;
+        text-align: left;
+      }
+
+      .business-img {
+        width: 50px;
+        height: 50px;
+        position: relative;
+      }
+
+      img {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+
+.promo-section {
+  display: flex;
+  flex-flow: column wrap;
+  font-size: 125%;
+  line-height: 1.6em;
+  position: relative;
+  z-index: 99;
+
+  .promo-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin: 0 -2px;
+  }
+}
+
+.button.home-button {
+  color: #FFF !important;
+  border-color: #fff !important;
+  background-color: transparent !important;
+
+  &:hover {
+    color: $primary-color !important;
+    box-shadow: unset !important;
+    background: #FFF !important;
+  }
+
+  &::after {
+    content: unset;
+  }
+}
+
+
+@media only screen and (max-width: 1023px) {
+  .promo-section .promo-row {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 899px) {
+  .business-group {
+
+    .business-group-title span{
+      font-size: 16px;
+    }
+
+    .business-items {
+      display: block;
+
+      .business-item {
+        margin-bottom: 2em;
+        width: 100%;
+
+        .business-block {
+          width: 100%;
+          max-width: 360px;
+          text-align: center;
+
+           .business-img {
+             margin: 0 auto;
+           }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1400px) {}
+
+@media only screen and (min-width: 1500px) {}
