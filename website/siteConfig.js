@@ -72,7 +72,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} CodeDance MIT License 辽ICP备8888888号-1`,
+  copyright: `©${new Date().getFullYear()} CodeDance 辽ICP备8888888号-1`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.

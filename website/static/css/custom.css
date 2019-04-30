@@ -214,6 +214,15 @@
   padding: 1em;
 }
 
+.nav-footer .sitemap > div {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  min-width: 300px;
+}
+
 .nav-footer .sitemap h4 {
   font-weight: 400;
 }
