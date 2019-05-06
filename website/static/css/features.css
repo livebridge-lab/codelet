@@ -6,24 +6,24 @@
 }
 
 .splash-fade {
-  background-image: url("/img/banner-business.png") !important;
+  background-image: url("/img/banner-features.png") !important;
 }
 
-.business-wrapper {
+.features-wrapper {
   padding: 2em 0;
 }
 
-.business-group {
+.features-group {
   padding: 20px 30px;
 }
 
-.business-group .business-group-title {
+.features-group .features-group-title {
   text-align: center;
   padding: 1em 0;
   margin-bottom: 2em;
 }
 
-.business-group .business-group-title span {
+.features-group .features-group-title span {
   padding: .5em 74px;
   border-radius: 50px;
   display: inline-block;
@@ -34,7 +34,7 @@
   font-size: 28px;
 }
 
-.business-group .business-group-title span::after, .business-group .business-group-title span::before {
+.features-group .features-group-title span::after, .features-group .features-group-title span::before {
   position: absolute;
   height: 2px;
   width: 30px;
@@ -44,19 +44,19 @@
   border-radius: 2px;
 }
 
-.business-group .business-group-title span::after {
+.features-group .features-group-title span::after {
   right: 30px;
   background: -webkit-gradient(linear, left top, right top, from(#cacaca), to(#cacaca));
   background: linear-gradient(to right, #cacaca, #cacaca);
 }
 
-.business-group .business-group-title span::before {
+.features-group .features-group-title span::before {
   left: 30px;
   background: -webkit-gradient(linear, left top, right top, from(#cacaca), to(#cacaca));
   background: linear-gradient(to right, #cacaca, #cacaca);
 }
 
-.business-group .business-items {
+.features-group .features-items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -67,18 +67,18 @@
           justify-content: flex-start;
 }
 
-.business-group .business-items .business-item {
+.features-group .features-items .features-item {
   text-align: center;
   width: 33.3%;
   margin-bottom: 40px;
 }
 
-.business-group .business-items .business-item .business-block {
-  height: 250px;
-  width: 284px;
+.features-group .features-items .features-item .features-block {
+  height: 210px;
+  width: 325px;
   margin: 0 auto;
   display: inline-block;
-  padding: 20px;
+  padding: 20px 20px 20px 100px;
   -webkit-transition: background .3s, margin-top .3s, color .3s, -webkit-box-shadow .3s;
   transition: background .3s, margin-top .3s, color .3s, -webkit-box-shadow .3s;
   transition: background .3s, margin-top .3s, box-shadow .3s, color .3s;
@@ -87,7 +87,7 @@
   text-align: left;
 }
 
-.business-group .business-items .business-item .business-block .business-background {
+.features-group .features-items .features-item .features-block .features-background {
   position: absolute;
   z-index: 0;
   width: 100%;
@@ -100,13 +100,13 @@
   transition: background .3s;
 }
 
-.business-group .business-items .business-item .business-block:hover {
+.features-group .features-items .features-item .features-block:hover {
   -webkit-box-shadow: 10px 10px 10px #e5e5e5;
           box-shadow: 10px 10px 10px #e5e5e5;
   color: #fff;
 }
 
-.business-group .business-items .business-item .business-block:hover .business-link-button {
+.features-group .features-items .features-item .features-block:hover .features-link-button {
   display: inline-block;
   color: #454dd8;
   position: relative;
@@ -116,7 +116,7 @@
   cursor: pointer;
 }
 
-.business-group .business-items .business-item .business-name {
+.features-group .features-items .features-item .features-name {
   font-size: 20px;
   position: relative;
   padding: 1em 0;
@@ -124,31 +124,34 @@
   color: #0a0a0a;
 }
 
-.business-group .business-items .business-item .business-description {
+.features-group .features-items .features-item .features-description {
   font-size: 14px;
   position: relative;
   color: #0a0a0a;
   font-weight: 100;
 }
 
-.business-group .business-items .business-item .business-link-wrapper {
+.features-group .features-items .features-item .features-link-wrapper {
   padding: 1em 0;
   margin-top: 0.5em;
 }
 
-.business-group .business-items .business-item .business-link-button {
+.features-group .features-items .features-item .features-link-button {
   display: none;
   color: #fff;
   text-align: left;
 }
 
-.business-group .business-items .business-item .business-img {
+.features-group .features-items .features-item .features-img {
   width: 50px;
   height: 50px;
-  position: relative;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  margin-top: -25px;
 }
 
-.business-group .business-items .business-item img {
+.features-group .features-items .features-item img {
   width: 100%;
   position: absolute;
   top: 50%;
@@ -209,22 +212,19 @@
 }
 
 @media only screen and (max-width: 899px) {
-  .business-group .business-group-title span {
+  .features-group .features-group-title span {
     font-size: 16px;
   }
-  .business-group .business-items {
+  .features-group .features-items {
     display: block;
   }
-  .business-group .business-items .business-item {
+  .features-group .features-items .features-item {
     margin-bottom: 2em;
     width: 100%;
   }
-  .business-group .business-items .business-item .business-block {
+  .features-group .features-items .features-item .features-block {
     width: 100%;
     max-width: 360px;
-    text-align: center;
-  }
-  .business-group .business-items .business-item .business-block .business-img {
-    margin: 0 auto;
+    text-align: left;
   }
 }

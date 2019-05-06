@@ -3,22 +3,22 @@ const React = require('react');
 const CWD = process.cwd();
 
 const styles = [
-  '/css/business.css',
-  '/css/splash.css'
+  '/css/splash.css',
+  '/css/features.css'
 ];
 
 const scripts = [
   '/js/splash.js'
 ];
 
-const business = require(`${CWD}/business.json`);
+const features = require(`${CWD}/features.json`);
 
-const pageDescription = '「codelet业务系统」提供了高质量的满足特定业务需求的完整系统，可拿来即用，可二开扩展。技术上均基于「codelet基础框架」，具有良好的维护性和持续性。';
+const pageDescription = '「codelet业务系统」一键完成数据接入，原始数据自动更新，基础框架也随之更新，帮助团队摆脱基础功能的困扰，将更多的精力投入到具体的业务功能中去,效率提高N倍';
 
-const pageTitle = '泛化业务系统、二开最佳选择';
+const pageTitle = '用心每一个功能模块';
 
 
-class BusinessSplash extends React.Component {
+class FeaturesSplash extends React.Component {
   render() {
 
     const { siteConfig } = this.props;
@@ -33,7 +33,7 @@ class BusinessSplash extends React.Component {
 
     const SplashTitle = props => (
       <h2 className="splash-title">
-        {props.title} <br/>
+        {props.title} <br />
         <small>{props.description}</small>
       </h2>
     );
@@ -63,7 +63,7 @@ class BusinessSplash extends React.Component {
   }
 }
 
-class Business extends React.Component {
+class Features extends React.Component {
   render() {
 
     const siteConfig = this.props.config;
@@ -71,32 +71,32 @@ class Business extends React.Component {
     const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
     const docUrl = doc => `${baseUrl}${docsPart}${doc}`;
 
-    const Business = props => (
-      <div className="business-item">
-        <div className="business-block">
-          <div className="business-background"></div>
-          <div className="business-img"><img src={props.img} /></div>
-          <div className="business-name">{props.title}</div>
-          <div className="business-description" dangerouslySetInnerHTML={{ __html: props.description }}></div>
-          <div className="business-link-wrapper">
-            <a className="business-link-button" href={props.url}>了解更多&nbsp;→</a>
+    const Features = props => (
+      <div className="features-item">
+        <div className="features-block">
+          <div className="features-background"></div>
+          <div className="features-img"><img src={props.img} /></div>
+          <div className="features-name">{props.title}</div>
+          <div className="features-description" dangerouslySetInnerHTML={{ __html: props.description }}></div>
+          <div className="features-link-wrapper">
+            <a className="features-link-button" href={props.url}>了解更多&nbsp;→</a>
           </div>
         </div>
       </div>
     );
 
-    const BusinessGroup = props => (
-      <div className="business-group">
-        <div className="business-group-title">
+    const FeaturesGroup = props => (
+      <div className="features-group">
+        <div className="features-group-title">
           <span>{props.title}</span>
         </div>
-        <div className="business-items">{props.children}</div>
+        <div className="features-items">{props.children}</div>
       </div>
     );
 
-    const BusinessWrapper = props => (
-      <div className="business-container">
-        <div className="business-wrapper wrapper">{props.children}</div>
+    const FeaturesWrapper = props => (
+      <div className="features-container">
+        <div className="features-wrapper wrapper">{props.children}</div>
       </div>
     );
 
@@ -105,21 +105,21 @@ class Business extends React.Component {
         {styles.map(url => (
           <link rel="stylesheet" type="text/css" href={url} key={url} />
         ))}
-        <BusinessSplash siteConfig={siteConfig} />
-        <BusinessWrapper>
-          <BusinessGroup title="专业化、精细化的管理服务">
+        <FeaturesSplash siteConfig={siteConfig} />
+        <FeaturesWrapper>
+          <FeaturesGroup title="专业化、精细化的管理服务">
             {
-              business.map(data =>
-                <Business
+              features.map(data =>
+                <Features
                   title={data.title}
                   description={data.description}
-                  url={docUrl(data.dir)}
+                  url={docUrl(data.url)}
                   img={data.img}
                   default={data.default} />
               )
             }
-          </BusinessGroup>
-        </BusinessWrapper>
+          </FeaturesGroup>
+        </FeaturesWrapper>
         {scripts.map(url => (
           <script src={url}></script>
         ))}
@@ -128,6 +128,6 @@ class Business extends React.Component {
   }
 }
 
-Business.title = 'Codelet · 泛化业务系统、二开最佳选择';
+Features.title = 'Codelet · 用心每一个功能模块';
 
-module.exports = Business;
+module.exports = Features;

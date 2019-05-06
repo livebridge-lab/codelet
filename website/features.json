@@ -1,0 +1,32 @@
+ [{
+     "title": "积分系统",
+     "description": "智能仓储管理系统<br>专业化、 精细化的管理服务 ",
+     "url": "features",
+     "img": "/img/points.svg",
+     "default": true
+   },
+   {
+     "title": "成就系统",
+     "description": "智能仓储管理系统<br>专业化、 精细化的管理服务",
+     "url": "",
+     "img": "/img/achievement.svg"
+   },
+   {
+     "title": "层级分销",
+     "description": "智能仓储管理系统<br>专业化、 精细化的管理服务",
+     "url": "",
+     "img": "/img/distribution.svg"
+   },
+   {
+     "title": "社区",
+     "description": "智能仓储管理系统<br>专业化、 精细化的管理服务",
+     "url": "",
+     "img": "/img/community.svg"
+   },
+   {
+     "title": "统计",
+     "description": "智能仓储管理系统<br>专业化、 精细化的管理服务",
+     "url": "",
+     "img": "/img/statistics.svg"
+   }
+ ]
