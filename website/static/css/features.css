@@ -28,7 +28,7 @@
   border-radius: 50px;
   display: inline-block;
   position: relative;
-  color: #0a0a0a;
+  color: #333;
   text-align: center;
   font-weight: 300;
   font-size: 28px;
@@ -121,13 +121,13 @@
   position: relative;
   padding: 1em 0;
   font-weight: 300;
-  color: #0a0a0a;
+  color: #333;
 }
 
 .features-group .features-items .features-item .features-description {
   font-size: 14px;
   position: relative;
-  color: #0a0a0a;
+  color: #999;
   font-weight: 100;
 }
 
@@ -148,7 +148,7 @@
   position: absolute;
   left: 20px;
   top: 50%;
-  margin-top: -25px;
+  margin-top: -40px;
 }
 
 .features-group .features-items .features-item img {
