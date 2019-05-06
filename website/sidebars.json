@@ -11,8 +11,9 @@
       "features/reward-points-system-compositions",
       "features/reward-points-system-design-architecture",
       "features/reward-points-system-design-ER",
-      "features/reward-points-system-design-flow",
-      "features/reward-points-system-design-DB"
+      "features/reward-points-system-design-UML",
+      "features/reward-points-system-design-DB",
+      "features/reward-points-system-design-API"
     ]
   },
   "nodejs-mybatis-mysql": {
