@@ -8,12 +8,8 @@
     ],
     "积分系统": [
       "features/reward-points-meaning",
-      "features/reward-points-system-compositions",
-      "features/reward-points-system-design-architecture",
-      "features/reward-points-system-design-ER",
-      "features/reward-points-system-design-UML",
-      "features/reward-points-system-design-DB",
-      "features/reward-points-system-design-API"
+      "features/reward-points-system-compositions-and-architecture",
+      "features/reward-points-system-design"
     ]
   },
   "nodejs-mybatis-mysql": {
