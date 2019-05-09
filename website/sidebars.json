@@ -8,6 +8,7 @@
     ],
     "积分系统": [
       "features/reward-points-meaning",
+      "features/reward-points-business-meaning",
       "features/reward-points-system-compositions-and-architecture",
       "features/reward-points-system-design"
     ]
