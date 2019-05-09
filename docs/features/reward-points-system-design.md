@@ -48,7 +48,7 @@ title: 系统设计
 
 #### 积分获取
 
-通常通过奖励活动获取，没有特定API。
+- 积分获取：```[post] /reward-points?category=:category&activityID=:activityID```
 
 #### 积分查看
 
@@ -58,7 +58,7 @@ title: 系统设计
 
 #### 积分消耗
 
-通常通过积分兑换的方式消耗，没有特定API。
+- 积分消耗：
 
 ## 数据库设计
 
