@@ -2,10 +2,7 @@
   "docs": {
     "Docusaurus": ["doc1", "doc2", "doc3"]
   },
-  "features": { 
-    "Hello": [
-      "features/index"
-    ],
+  "features": {
     "积分系统": [
       "features/reward-points-meaning",
       "features/reward-points-business-meaning",
