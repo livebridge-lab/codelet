@@ -10,16 +10,24 @@
       "features/reward-points-system-design"
     ]
   },
+  "communities": {
+    "社区系统": [
+      "communities/index",
+      "communities/communities-system-framework",
+      "communities/communities-system-design",
+      "communities/communities-system-implementation"
+    ]
+  },
   "nodejs-mybatis-mysql": {
     "First Category": [
-      "nodejs-mybatis-mysql/index", 
+      "nodejs-mybatis-mysql/index",
       "nodejs-mybatis-mysql/install"
     ]
   },
   "springboot-mybatis-mysql": {
     "Getting Starter": [
-      "springboot-mybatis-mysql/index", 
-      "springboot-mybatis-mysql/intro", 
+      "springboot-mybatis-mysql/index",
+      "springboot-mybatis-mysql/intro",
       "springboot-mybatis-mysql/install"
     ]
   }
