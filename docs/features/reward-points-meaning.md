@@ -1,6 +1,6 @@
 ---
 id: reward-points-meaning
-title: 积分基本概念
+title: 基本概念
 ---
 ## 积分的定义
 

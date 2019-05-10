@@ -1,6 +1,6 @@
 ---
 id: reward-points-business-meaning
-title: 业务理解
+title: 积分分类
 ---
 ## 积分常见分类
 
