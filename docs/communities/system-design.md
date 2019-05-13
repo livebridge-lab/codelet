@@ -3,8 +3,6 @@ id: communities-system-design
 title: 系统设计
 ---
 
-...
-
 ## 业务流程图
 
 #### 发布内容流程
@@ -12,12 +10,6 @@ title: 系统设计
 社区最核心的业务即内容的发布和查看。
 
 ![发布内容流程图](/img/communities-content-public-procedures.png)
-
-#### 激励体系流程
-
-社区加入激励体系可极大的增加用户参与的活跃度，满足成员自身的虚荣心和荣誉感。
-
-> 可参考[ 积分系统 ](/docs/features)
 
 ## API 设计
 
