@@ -13,7 +13,7 @@
   },
   "communities": {
     "社区系统": [
-      "communities/index",
+      "communities/communities-introduction",
       "communities/communities-system-framework",
       "communities/communities-system-design",
       "communities/communities-system-implementation"
