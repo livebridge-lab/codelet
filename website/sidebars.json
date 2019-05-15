@@ -2,26 +2,33 @@
   "docs": {
     "Docusaurus": ["doc1", "doc2", "doc3"]
   },
-  "features": { 
-    "Hello": [
-      "features/index"
-    ],
+  "features": {
     "积分系统": [
       "features/reward-points-meaning",
+      "features/reward-points-business-meaning",
       "features/reward-points-system-compositions-and-architecture",
-      "features/reward-points-system-design"
+      "features/reward-points-system-design",
+      "features/reward-points-FAQ"
+    ]
+  },
+  "communities": {
+    "社区系统": [
+      "communities/communities-introduction",
+      "communities/communities-system-framework",
+      "communities/communities-system-design",
+      "communities/communities-system-implementation"
     ]
   },
   "nodejs-mybatis-mysql": {
     "First Category": [
-      "nodejs-mybatis-mysql/index", 
+      "nodejs-mybatis-mysql/index",
       "nodejs-mybatis-mysql/install"
     ]
   },
   "springboot-mybatis-mysql": {
     "Getting Starter": [
-      "springboot-mybatis-mysql/index", 
-      "springboot-mybatis-mysql/intro", 
+      "springboot-mybatis-mysql/index",
+      "springboot-mybatis-mysql/intro",
       "springboot-mybatis-mysql/install"
     ]
   }

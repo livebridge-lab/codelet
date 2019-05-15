@@ -5,6 +5,17 @@ title: 系统设计
 
 ## 业务流程图
 
+因为积分的获取和消耗通常是掺杂在其他业务中，所以举几个典型的例子来表达积分获取和消耗的业务流程。
+
+### 签到送积分
+![签到送积分](/img/reward-points-sign-in.png)
+
+### 购物送积分
+![购物送积分](/img/reward-points-shopping.png)
+
+### 邀请好友送积分
+![参与活动送积分](/img/reward-points-activities.png)
+
 ## 实体建模
 
 ## API设计
@@ -37,7 +48,7 @@ title: 系统设计
 
 #### 积分获取
 
-通常通过奖励活动获取，没有特定API。
+- 积分获取：```[post] /reward-points?category=:category&activityID=:activityID```
 
 #### 积分查看
 
@@ -47,7 +58,7 @@ title: 系统设计
 
 #### 积分消耗
 
-通常通过积分兑换的方式消耗，没有特定API。
+- 积分消耗：
 
 ## 数据库设计
 

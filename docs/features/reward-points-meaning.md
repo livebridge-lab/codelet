@@ -1,6 +1,6 @@
 ---
 id: reward-points-meaning
-title: 业务理解
+title: 基本概念
 ---
 ## 积分的定义
 

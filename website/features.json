@@ -1,7 +1,7 @@
  [{
      "title": "积分系统",
      "description": "智能仓储管理系统<br>专业化、 精细化的管理服务 ",
-     "url": "features",
+     "url": "features/reward-points-meaning",
      "img": "/img/points.svg",
      "default": true
    },
@@ -19,8 +19,8 @@
    },
    {
      "title": "社区",
-     "description": "智能仓储管理系统<br>专业化、 精细化的管理服务",
-     "url": "",
+     "description": "社区系统<br>专业化、 精细化的知识专区",
+     "url": "communities/communities-introduction",
      "img": "/img/community.svg"
    },
    {
