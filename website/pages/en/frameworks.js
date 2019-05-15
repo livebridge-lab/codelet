@@ -14,7 +14,7 @@ const scripts = [
   '/js/splash.js'
 ];
 
-const pageDescription = '「Codelet 基础框架」提供了高质量的开发系统所需的基础功能，包括认证、授权、消息、权限、人员、组织、安全等，帮助团队摆脱基础功能的困扰，将更多的精力投入到具体的业务功能中去。';
+const pageDescription = '「codelet基础框架」提供了高质量的开发系统所需的基础功能，功能包括认证、授权、消息、权限、人员、组织、安全等，帮助团队摆脱基础功能的困扰，将更多的精力投入到具体的业务功能中去';
 
 const pageTitle = '聚焦核心业务，摆脱基础设施困扰';
 
@@ -45,7 +45,7 @@ class FrameworksSplash extends React.Component {
     );
 
     const Button = props => (
-      <a className={ 'button button-circle home-button' } href={props.href} target={props.target}>
+      <a className={ 'button home-button' } href={props.href} target={props.target}>
         {props.children}
       </a>
     );
@@ -55,10 +55,43 @@ class FrameworksSplash extends React.Component {
         <div className="wrapper splash-wrapper">
           <SplashTitle title={pageTitle} description={pageDescription} />
           <PromoSection>
-            <Button href={ siteConfig.repoUrl } target="_blank">立即体验</Button>
+            <Button href={siteConfig.repoUrl} target="_blank">立即体验</Button>
+            <Button href={siteConfig.repoUrl} target="_blank">核心功能</Button>
+            <Button href={siteConfig.repoUrl} target="_blank">技术栈</Button>
           </PromoSection>
         </div>
       </SplashContainer>
+    );
+  }
+}
+
+class Descriptions extends React.Component {
+  render() {
+    const data = this.props.data
+    const Description = props => (
+      <div className="description-item">
+        <div className="order">{props.order}</div>
+        <div className="item-title">{props.title}</div>
+        <div className="item-content" dangerouslySetInnerHTML={{ __html: props.content }}></div>
+      </div>
+    );
+    return (
+      <div className="descriptions">
+        <div className="wrapper">
+          <div className="description-title">{data.title}</div>
+          <div className="description-group">
+            {
+              (data.descriptions || []).map((description, index) =>
+                <Description
+                  order={'0' + (index + 1) + '.'}
+                  title={description.title}
+                  content={description.content}
+                ></Description>
+              )
+            }
+          </div>
+        </div>
+      </div>
     );
   }
 }
@@ -79,7 +112,7 @@ class Frameworks extends React.Component {
           <div className="framework-name">{props.name}</div>
           <div className="framework-description" dangerouslySetInnerHTML={{ __html: props.description }}></div>
           <div className="framework-link-wrapper">
-            <a className="button button-circle framework-link-button" href={props.url}>查看详情</a>
+            <a className="framework-link-button" href={props.url}>了解更多 -></a>
           </div>
         </div>
       </div>
@@ -106,23 +139,12 @@ class Frameworks extends React.Component {
           <link rel="stylesheet" type="text/css" href={url} key={url} />
         ))}
         <FrameworksSplash siteConfig={siteConfig} />
+        <Descriptions data={frameworks.why}></Descriptions>
+        <Descriptions data={frameworks.core}></Descriptions>
         <FrameworksWrapper>
-          <FrameworkGroup title="后&nbsp;端" key="后端">
+          <FrameworkGroup title="技术栈选型">
             {
-              frameworks.backend.map(data => 
-                <Framework
-                  key={data.name}
-                  name={data.name}
-                  description={data.description}
-                  url={docUrl(data.dir)}
-                  img={data.img}
-                  default={data.default} />
-              )
-            }
-          </FrameworkGroup>
-          <FrameworkGroup title="前&nbsp;端" key="前端">
-            {
-              frameworks.frontend.map(data => 
+              frameworks.choice.map(data => 
                 <Framework
                   key={data.name}
                   name={data.name}

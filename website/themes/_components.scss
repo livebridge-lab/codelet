@@ -1,6 +1,6 @@
 
 @mixin button-base($color, $color-dark) {
-  padding: .5em 1.6em;
+  padding: .5em 1.4em;
   font-size: 16px;
   font-weight: 300;
   border: 1px solid transparent;
@@ -9,6 +9,7 @@
   background-clip: padding-box;
   transition: background .3s, box-shadow .3s;
   text-transform: unset;
+  border-radius: 0px;
   cursor: pointer;
 
   &::after { 

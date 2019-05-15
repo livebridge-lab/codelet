@@ -1,44 +1,78 @@
 {
-  "backend": [
+  "choice": [
     {
-      "name": "Node.js + Menuet + MongoDB",
-      "description": "互联网应用首选<br>轻量，高效",
+      "name": "Node.js + Menuet",
+      "description": "互联网应用首选轻量，高效",
       "dir": "nodejs-menuet-mongodb",
-      "img": "/img/node.js+menuet+mongodb.png",
+      "img": "/img/node.js+menuet+mongodb.svg",
       "default": true
     },
     {
-      "name": "SpringBoot + MyBatis + MySQL",
-      "description": "企业级应用<br>易学，上手快",
+      "name": "SpringBoot + MyBatis",
+      "description": "企业级应用易学，上手快",
       "dir": "springboot-mybatis-mysql",
-      "img": "/img/springboot+mybatis+mysql.png"
+      "img": "/img/springboot+mybatis+mysql.svg"
     },
     {
-      "name": "SpringBoot + Hibernate + MySQL",
-      "description": "企业级应用<br>功能强大，有一定学习曲线",
+      "name": "SpringBoot + Hibernate",
+      "description": "企业级应用功能强大，有一定学习曲线",
       "dir": "springboot-hibernate-mysql",
-      "img": "/img/springboot+hibernate+mysql.png"
-    }
-  ],
-  "frontend": [
+      "img": "/img/springboot+hibernate+mysql.svg"
+    },
     {
-      "name": "Angular + ng-tangram",
-      "description": "企业级应用<br>谷歌站台",
+      "name": "Angular + tangram",
+      "description": "企业级应用谷歌站台",
       "dir": "angular-ng-tangram",
-      "img": "/img/angular+tangram.png",
+      "img": "/img/angular+tangram.svg",
       "default": true
     },
     {
       "name": "Vue + ElementUI",
-      "description": "轻量级应用<br>上手快",
+      "description": "轻量级应用上手快",
       "dir": "vue-elementui",
-      "img": "/img/vue+elementui.png"
+      "img": "/img/vue+elementui.svg"
     },
     {
       "name": "React + AntDesign",
-      "description": "企业级应用<br>Facebook站台",
+      "description": "企业级应用Facebook站台",
       "dir": "react-ant-desin",
-      "img": "/img/react+antdesign.png"
+      "img": "/img/react+antdesign.svg"
     }
-  ]
+  ],
+  "why": {
+    "title": "为什么选择 「Codelet基础框架」",
+    "descriptions": [{
+        "title": "全部基于主流开源技术、无任何封装",
+        "content": "我们不发明任何新东西<br>不会发生任何新的学习成本"
+      },
+      {
+        "title": "产品级实现、经大量项目验证",
+        "content": "截止目前已经在50+不同规模（20万～500万）的项目中使用，稳定可靠"
+      },
+      {
+        "title": "完备的文档",
+        "content": "不仅提供使用说明，还提供实现原理，甚至可作为系统学习的资料"
+      },
+      {
+        "title": "提供持续维护升级和服务",
+        "content": "截止目前已经在50+不同规模（20万～500万）的项目中使用，稳定可靠"
+      }
+    ]
+  },
+  "core": {
+      "title": "核心功能",
+      "descriptions": [{
+        "title": "全部基于主流开源技术、无任何封装",
+        "content": "我们不发明任何新东西<br>不会发生任何新的学习成本"
+      }, {
+        "title": "产品级实现、经大量项目验证",
+        "content": "截止目前已经在50+不同规模（20万～500万）的项目中使用，稳定可靠"
+      }, {
+        "title": "完备的文档",
+        "content": "不仅提供使用说明，还提供实现原理，甚至可作为系统学习的资料"
+      }, {
+        "title": "提供持续维护升级和服务",
+        "content": "截止目前已经在50+不同规模（20万～500万）的项目中使用，稳定可靠"
+      }]
+  }
 }

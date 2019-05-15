@@ -1,5 +1,5 @@
 .button {
-  padding: .5em 1.6em;
+  padding: .5em 1.4em;
   font-size: 16px;
   font-weight: 300;
   border: 1px solid transparent;
@@ -11,6 +11,7 @@
   transition: background .3s, box-shadow .3s;
   transition: background .3s, box-shadow .3s, -webkit-box-shadow .3s;
   text-transform: unset;
+  border-radius: 0px;
   cursor: pointer;
 }
 
