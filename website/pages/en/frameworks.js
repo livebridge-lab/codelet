@@ -14,7 +14,7 @@ const scripts = [
   '/js/splash.js'
 ];
 
-const pageDescription = '「codelet基础框架」提供了高质量的开发系统所需的基础功能，功能包括认证、授权、消息、权限、人员、组织、安全等，帮助团队摆脱基础功能的困扰，将更多的精力投入到具体的业务功能中去';
+const pageDescription = '「codelet基础框架」提供了高质量的开发系统所需的基础功能，功能包括认证、授权、消息、权限、人员、组织、安全等。帮助团队摆脱基础功能的困扰，将更多的精力投入到具体的业务功能中去';
 
 const pageTitle = '聚焦核心业务，摆脱基础设施困扰';
 
@@ -141,7 +141,7 @@ class Frameworks extends React.Component {
         <FrameworksSplash siteConfig={siteConfig} />
         <Descriptions data={frameworks.why}></Descriptions>
         <Descriptions data={frameworks.core}></Descriptions>
-        <div className="wrapper center more"><a className="button" href="/docs/core/doc1" target="_blank">查看更多</a></div>
+        <div className="wrapper center more"><a className="button" href="/docs/core/" target="_blank">查看更多</a></div>
         <FrameworksWrapper>
           <FrameworkGroup title="技术栈选型">
             {
