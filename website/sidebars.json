@@ -36,6 +36,10 @@
     "核心功能": [
       "core/doc1",
       "core/doc2"
+    ],
+    "核心功能2": [
+      "core/doc3",
+      "core/doc4"
     ]
   }
 }
