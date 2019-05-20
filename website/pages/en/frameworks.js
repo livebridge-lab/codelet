@@ -141,6 +141,7 @@ class Frameworks extends React.Component {
         <FrameworksSplash siteConfig={siteConfig} />
         <Descriptions data={frameworks.why}></Descriptions>
         <Descriptions data={frameworks.core}></Descriptions>
+        <div className="wrapper center more"><a className="button" href="/docs/core/doc1" target="_blank">查看更多</a></div>
         <FrameworksWrapper>
           <FrameworkGroup title="技术栈选型">
             {

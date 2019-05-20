@@ -31,5 +31,11 @@
       "springboot-mybatis-mysql/intro",
       "springboot-mybatis-mysql/install"
     ]
+  },
+  "core": {
+    "核心功能": [
+      "core/doc1",
+      "core/doc2"
+    ]
   }
 }
