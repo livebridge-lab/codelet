@@ -221,4 +221,8 @@
 
 @media only screen and (min-width: 1400px) {}
 
-@media only screen and (min-width: 1500px) {}
+@media only screen and (min-width: 1500px) {
+  .wrapper {
+    max-width: 1100px !important;
+  }
+}
