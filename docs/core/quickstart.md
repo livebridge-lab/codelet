@@ -3,7 +3,7 @@ id: quickstart
 title: 快速入门
 ---
 
-本文将从实例的角度，一步步地搭建出一个 Egg.js 应用，让你能快速的入门 Egg.js。
+本文将从实例的角度，一步步地搭建出一个基于「Codelet基础框架」。
 
 ## 环境准备
 - 操作系统：支持 macOS，Linux，Windows
