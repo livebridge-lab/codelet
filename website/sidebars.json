@@ -32,6 +32,11 @@
       "springboot-mybatis-mysql/install"
     ]
   },
+  "achievements": {
+    "成就系统": [
+      "achievements/achievements-introduction"
+    ]
+  },
   "core": {
     "快速开始": [
       "core/index",
@@ -44,6 +49,15 @@
     "技术架构": [
       "core/doc5",
       "core/doc6"
+    ],
+    "报表": [
+      "core/doc7"
+    ],
+    "工作流": [
+      "core/doc8"
+    ],
+    "系统架构": [
+      "core/doc9"
     ]
   }
 }
