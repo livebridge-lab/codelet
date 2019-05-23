@@ -34,7 +34,8 @@
   },
   "achievements": {
     "成就系统": [
-      "achievements/achievements-introduction"
+      "achievements/achievements-introduction",
+      "achievements/achievement-system-design"
     ]
   },
   "core": {
