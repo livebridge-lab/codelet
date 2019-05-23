@@ -17,12 +17,12 @@ title: 安全
 | Broken Access Control  | `实现服务端访问控制机制` `实现资源精准定义(RESTful)`<br>`避免使用CORS` `JWT令牌生命周期管理`  | 
 | Security Misconfiguration  | 中等文本 | 
 | Cross-Site Scripting (XSS)  | 防止XSS攻击 | 
-| Insecure Deserialization  | 中等文本 | 
+| Insecure Deserialization  | `避免使用任何反序列化的逻辑` | 
 | Using Components with Known Vulnerabilities  | 中等文本 | 
 | Insufficient Logging & Monitoring  | 中等文本 | 
 如果对风险和防范措施的具体内容感兴趣，请参照 [CodingEX 中的安全章节](https://codingex.proding.net/docs/backend/was-01-overview/)。
 
-## 其它风险
+## 其它安全措施
 
 
 

@@ -44,11 +44,13 @@
       "core/quickstart"
     ],
     "功能介绍": [
-      "core/doc3",
+      "core/functions",
       "core/security"
     ],
     "技术架构": [
-      "core/doc5",
+      "core/doc5"
+    ],
+    "使用指南": [
       "core/doc6"
     ],
     "报表": [
