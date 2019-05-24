@@ -13,7 +13,7 @@ const scripts = [
 
 const features = require(`${CWD}/features.json`);
 
-const pageDescription = '「codelet业务系统」一键完成数据接入，原始数据自动更新，基础框架也随之更新，帮助团队摆脱基础功能的困扰，将更多的精力投入到具体的业务功能中去,效率提高N倍';
+const pageDescription = '「codelet功能模块」提供了大量的基础性业务功能实现，帮助团队快速搭建所需的应用系统。';
 
 const pageTitle = '用心每一个功能模块';
 
