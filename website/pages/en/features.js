@@ -13,7 +13,7 @@ const scripts = [
 
 const features = require(`${CWD}/features.json`);
 
-const pageDescription = '「codelet功能模块」提供了大量的基础性业务功能实现，帮助团队快速搭建所需的应用系统。';
+const pageDescription = '「codelet功能模块」提供了大量的基础性业务功能实现，帮助团队快速搭建所需的应用系统。这些功能模块遵循统一的技术栈、设计理念和规范，可实现无缝整合。';
 
 const pageTitle = '用心每一个功能模块';
 
