@@ -48,7 +48,7 @@ title: 系统架构
 </mirrors>
 ```
 
-下载 [settings.xml](./maven/settings.xml)，并将其置于个人 Maven 本地库根路径下（`~/.m2/`）。
+下载 [settings.xml](/file/settings.xml)，并将其置于个人 Maven 本地库根路径下（`~/.m2/`）。
 
 在工程的根路径下（即 `pom.xml` 文件所在位置）执行以下命令工程代码将被编译并打包（打包文件将被输出到各子工程的 `target` 路径下）：
 
@@ -118,14 +118,6 @@ Maven 工程通过 `pom.xml` 文件（位于工程的根路径下）配置工程
 > Eureka 是 Spring 的服务注册与服务自动发现系统，通过 OpenFeign 可以调用在 Eureka 注册中心注册的服务，从而实现服务间的调用。
 
 ## 工程结构
-
-### Git 代码库地址
-
-```text
-git@192.168.1.254:bpm-backend
-```
-
-> 请先根据内网的[工程库连接说明](http://192.168.1.254/)生成证书。
 
 > 工程库包含 `master`、`development`、`wison-auth`、`wison-docs`、`wison-bpm` 等分支，分别为主、开发、用户认证子系统、文件管理子系统和业务流程管理子系统分支。
 
@@ -361,7 +353,7 @@ public class Application implements WebMvcConfigurer {
 }
 ```
 
-通过以上配置，应用启动后便可通过 `/docs/` 路径查看 API 文档，例如 `wison-auth` 的 API 文档路径为 [http://114.115.217.120:8810/docs/](/docs/)。
+通过以上配置，应用启动后便可通过 `/docs/` 路径查看 API 文档，例如 `wison-auth` 的 API 文档路径为 [http://114.115.217.120:8810/docs/](http://114.115.217.120:8810/docs/)。
 
 ### 数据传输对象（DTO）定义
 
@@ -1348,7 +1340,7 @@ Authorization: Bearer 用户访问令牌
 
 ### Jaspersoft Studio 使用说明
 
-[下载 Jaspersoft Studio 使用说明](./downloads/jaspersoft-studio.zip)
+[下载 Jaspersoft Studio 使用说明](/file/jaspersoft-studio.zip)
 
 ### 数据结构
 
