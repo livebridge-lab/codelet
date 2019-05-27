@@ -20,7 +20,7 @@
    {
      "title": "社区",
      "description": "社区<br>专业化、 精细化的知识专区",
-     "url": "communities/communities-introduction",
+     "url": "community/",
      "img": "/img/community.svg"
    },
    {
@@ -38,7 +38,7 @@
    {
      "title": "文档",
      "description": "简单易用，功能强大除通用基本操作外还支持批量上传、版本管理、权限隔离、打包下载等特性。",
-     "url": "",
+     "url": "document/",
      "img": "/img/document.svg"
    },
     {

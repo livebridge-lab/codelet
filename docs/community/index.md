@@ -1,5 +1,5 @@
 ---
-id: communities-introduction
+id: index
 title: 前言
 ---
 

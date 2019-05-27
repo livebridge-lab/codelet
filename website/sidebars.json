@@ -11,13 +11,22 @@
       "features/reward-points-FAQ"
     ]
   },
-  "communities": {
+  "community": {
     "社区": [
-      "communities/communities-introduction",
-      "communities/requirement",
-      "communities/analysis_design",
-      "communities/implementation",
-      "communities/download_experience"
+      "community/index",
+      "community/requirement",
+      "community/analysis_design",
+      "community/implementation",
+      "community/download_experience"
+    ]
+  },
+  "doucument": {
+    "文档": [
+      "document/index",
+      "document/requirement",
+      "document/analysis_design",
+      "document/implementation",
+      "document/download_experience"
     ]
   },
   "nodejs-mybatis-mysql": {
