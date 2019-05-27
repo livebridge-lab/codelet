@@ -14,8 +14,10 @@
   "communities": {
     "社区": [
       "communities/communities-introduction",
-      "communities/communities-system-design",
-      "communities/communities-system-log"
+      "communities/requirement",
+      "communities/analysis_design",
+      "communities/implementation",
+      "communities/download_experience"
     ]
   },
   "nodejs-mybatis-mysql": {
