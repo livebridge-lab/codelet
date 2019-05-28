@@ -5,16 +5,16 @@ title: 分析与设计
 
 ## 领域模型
 
-#### 问答版块
+### 问答版块
 ![问答版块领域模型](/img/community-question-domain-model.png)
-#### 专栏版块
+### 专栏版块
 ![专栏版块领域模型](/img/community-article-domain-model.png)
 
 ## 业务流程
 
 社区核心业务：内容发布、内容搜索和内容查看。
 
-#### 发布内容流程
+### 发布内容流程
 
 ![发布内容流程图](/img/communities-content-public-procedures.png)
 
