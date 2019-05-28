@@ -5,7 +5,10 @@ title: 分析与设计
 
 ## 领域模型
 
-![社区领域模型](/img/community-domain-model.png)
+#### 问答版块
+![问答版块领域模型](/img/community-question-domain-model.png)
+#### 专栏版块
+![专栏版块领域模型](/img/community-article-domain-model.png)
 
 ## 业务流程
 
@@ -14,10 +17,6 @@ title: 分析与设计
 #### 发布内容流程
 
 ![发布内容流程图](/img/communities-content-public-procedures.png)
-
-## 关键交互
-
-如有需要，此处可插入时序图。
 
 ## API 设计
 
