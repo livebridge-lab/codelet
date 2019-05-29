@@ -1,62 +1,74 @@
  [{
-     "title": "积分系统",
-     "description": "智能仓储管理系统<br>专业化、 精细化的管理服务 ",
+     "title": "积分",
+     "description": "一个可以灵活定制规则的积分业务实现，可以满足一般面向 C 端互联网产品的需求。",
      "url": "features/reward-points-meaning",
      "img": "/img/points.svg",
      "default": true
    },
    {
-     "title": "成就系统",
-     "description": "智能仓储管理系统<br>专业化、 精细化的管理服务",
+     "title": "成就",
+     "description": "一个可以灵活定制规则的成就业务实现，可以满足一般面向 C 端互联网产品的需求。",
      "url": "achievements/achievements-introduction",
      "img": "/img/achievement.svg"
    },
    {
-     "title": "层级分销",
-     "description": "智能仓储管理系统<br>专业化、 精细化的管理服务",
+     "title": "分销",
+     "description": "通过分销奖励引发裂变传播，让更多人帮你卖货。",
      "url": "",
      "img": "/img/distribution.svg"
    },
    {
      "title": "社区",
-     "description": "社区<br>专业化、 精细化的知识专区",
+     "description": "内容社区，包含问答（帖子）、专栏（博客）两个基础板块。",
      "url": "community/",
      "img": "/img/community.svg"
    },
    {
      "title": "统计",
-     "description": "智能仓储管理系统<br>专业化、 精细化的管理服务",
+     "description": "通用统计模型；以及以新增、活跃、留存、转化、传播（AARRR）特定业务为目标的实现。",
      "url": "",
      "img": "/img/statistics.svg"
    },
    {
      "title": "计费",
-     "description": "智能仓储管理系统<br>专业化、 精细化的管理服务",
+     "description": "覆盖几种常见的计费模型，可以满足绝大多数 SaaS 型产品的计费需求。",
      "url": "",
      "img": "/img/cost.svg"
    },
    {
      "title": "文档",
-     "description": "简单易用，功能强大除通用基本操作外还支持批量上传、版本管理、权限隔离、打包下载等特性。",
+     "description": "一个覆盖通用文档管理场景的模块，可以被用来开发如企业知识库、在线网盘等以文件管理为核心的系统。",
      "url": "document/",
      "img": "/img/document.svg"
    },
     {
       "title": "报表单据",
-      "description": "智能仓储管理系统<br>专业化、 精细化的管理服务",
+      "description": "基于开源框架 JasperReport 的报表单据解决方案，以业务场景为导向系统性阐述应用最佳实践。",
       "url": "",
       "img": "/img/report.svg"
     },
      {
        "title": "工作流",
-       "description": "智能仓储管理系统<br>专业化、 精细化的管理服务",
+       "description": "基于开源框架 Activiti 的工作流解决方案，以业务场景为导向系统性阐述应用最佳实践。",
        "url": "",
        "img": "/img/workflow.svg"
      },
      {
        "title": "订单",
-       "description": "智能仓储管理系统<br>专业化、 精细化的管理服务",
+       "description": "一个标准的电商订单业务模块，支持订单拆分。",
        "url": "",
        "img": "/img/order.svg"
+     },
+     {
+       "title": "优惠券",
+       "description": "支持 4 种优惠券类型满足多种经营场景：随机优惠券、折扣优惠券、满减优惠券、无门槛优惠券。",
+       "url": "",
+       "img": "/img/coupon.svg"
+     },
+     {
+       "title": "促销活动",
+       "description": "支持 3 中促销活动：限时促销、限时促销、限时促销",
+       "url": "",
+       "img": "/img/sales_promotion.svg"
      }
  ]
