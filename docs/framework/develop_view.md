@@ -1,212 +1,9 @@
 ---
-id: doc9
-title: 系统架构
+id: develop_view
+title: 开发流程
 ---
-## 开发环境搭建
 
-### 所需组件
-
-* JDK：[1.8.171](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) - Java 开发工具包
-* Maven：[3.5.4](http://maven.apache.org/download.cgi) - Java 依赖包管理工具
-* Redis：[4.0.1](http://download.redis.io/releases/) - 内存型数据库
-* MySQL：[5.7.21](https://www.mysql.com/) - 关系型数据库
-* Elasticsearch：[5.5.0](https://www.elastic.co/downloads/elasticsearch) - 全文检索引擎
-* ImageMagick：[6.9.2-10](http://www.imagemagick.org/script/download.php) - 图像处理工具
-* FFmpeg：[3.4.2](http://ffmpeg.org/download.html) - 音频/视频处理工具
-* MooseFS：[3.0.97](https://moosefs.com/download/) - 分布式文件系统
-
-> Elasticsearch 用于文件管理子系统的文件查询以及各子系统的日志查询。
-
-> 需要为 Elasticsearch 添加中文分词插件 [IK](https://github.com/medcl/elasticsearch-analysis-ik/tree/master)，注意选择与 Elasticsearch 匹配的版本。
-
-> ImageMagick 和 FFmpeg 在开发环境作为可选组件，当需要处理媒体文件时使用。
-
-> MooseFS 仅在产品环境必须。
-
-### 集成开发环境
-
-* IntelliJ IDEA 2017.3 或 Eclipse Oxygen.2
-
-### 设置 Maven 镜像库
-
-配置 settings.xml 文件，添加镜像以提高依赖包的下载速度。
-
-```xml
-<mirrors>
-  <mirror>
-    <id>repo1</id>
-    <mirrorOf>central</mirrorOf>
-    <name>Maven Repo #1</name>
-    <url>http://repo1.maven.org/maven2/</url>
-  </mirror>
-  <mirror>
-    <id>repo2</id>
-    <mirrorOf>central</mirrorOf>
-    <name>Maven Repo #2</name>
-    <url>http://repo2.maven.org/maven2/</url>
-  </mirror>
-</mirrors>
-```
-
-下载 [settings.xml](/file/settings.xml)，并将其置于个人 Maven 本地库根路径下（`~/.m2/`）。
-
-在工程的根路径下（即 `pom.xml` 文件所在位置）执行以下命令工程代码将被编译并打包（打包文件将被输出到各子工程的 `target` 路径下）：
-
-```bash
-$ mvn package
-```
-
-> 打包文件的类型通过 `pom.xml` 的 `<package>` 设置，可选值如 `jar`、`war`、`pom`。
-
-> 当存在子工程时，父级工程的打包类型应设置为 `pom`，父级工程不会被打包成 `.jar` 或 `.war` 文件。
-
-执行以下命令将工程代码编译、打包，并将打包文件将被安装到 Maven 本地库中（`~/.m2/repository/`）：
-
-```bash
-$ mvn install
-```
-
-> 通过将代码编译、打包、安装使工程代码可以被其他工程依赖使用。
-
-有时需要先清理已安装到本地库中的包，再执行安装：
-
-```bash
-$ mvn clean install
-```
-
-### 主要依赖说明
-
-Maven 工程通过 `pom.xml` 文件（位于工程的根路径下）配置工程基本信息，其中 `<dependencies>` 元素内的节点为工程所依赖的库。
-
-|Group ID|Artifact ID|版本|说明|参考|
-|:---|:---|:---|:---|:---|
-|org.springframework|spring-web|5.0.6.RELEASE|Spring Web 基础支持|&nbsp;|
-|org.springframework|spring-orm|5.0.6.RELEASE|Spring ORM 基础支持|&nbsp;|
-|org.springframework.data|spring-data-commons|2.0.7.RELEASE|Spring Data|&nbsp;|
-|org.springframework.data|spring-data-redis|2.0.2.RELEASE|Spring Data Redis|&nbsp;|
-|org.springframework.boot|spring-boot-starter-web|2.0.2.RELEASE|Spring Boot Web 应用启动器|&nbsp;|
-|org.springframework.boot|spring-boot-configuration-processor|2.0.2.RELEASE|Spring Boot 配置处理器|&nbsp;|
-|org.springframework.boot|spring-boot-starter-aop|2.0.2.RELEASE|Spring Boot AOP 支持|&nbsp;|
-|org.springframework.boot|spring-boot-starter-data-jpa|2.0.2.RELEASE|Spring Data JPA|&nbsp;|
-|org.springframework.boot|spring-boot-starter-security|2.0.2.RELEASE|Spring Security|&nbsp;|
-|org.springframework.boot|spring-boot-starter-mail|2.0.2.RELEASE|邮件发送|&nbsp;|
-|org.springframework.cloud|spring-cloud-config-server|2.0.0.RELEASE|配置中心服务器|&nbsp;|
-|org.springframework.cloud|spring-cloud-starter-netflix-eureka-server|2.0.0.RELEASE|Eureka 服务器（注册中心）|&nbsp;|
-|org.springframework.cloud|spring-cloud-starter-netflix-eureka-client|2.0.0.RELEASE|Eureka 客户端|&nbsp;|
-|org.springframework.cloud|spring-cloud-starter-openfeign|2.0.0.RELEASE|Eureka 服务的 HTTP 客户端|&nbsp;|
-|org.springframework.security|spring-security-web|5.0.5.RELEASE|Spring Security|&nbsp;|
-|org.apache.tomcat.embed|tomcat-embed-core|8.5.31|HTTP 服务支持，如 HTTP 请求及响应|&nbsp;|
-|com.fasterxml.jackson.core|jackson-core|2.9.0|Jackson 核心库|[GitHub: Jackson](https://github.com/FasterXML/jackson)|
-|com.fasterxml.jackson.core|jackson-databind|2.9.0|Jackson 数据绑定|&nbsp;|
-|com.fasterxml.jackson.core|jackson-annotations|2.9.0|Jackson 注解|&nbsp;|
-|org.hibernate|hibernate-core|5.2.17.Final|Hibernate 核心库|&nbsp;|
-|org.hibernate.javax.persistence|hibernate-jpa-2.1-api|1.0.2|JPA 实现，数据实体定义等|&nbsp;|
-|mysql|mysql-connector-java|5.1.46|MySQL 的 Java 连接器|&nbsp;|
-|redis.clients|jedis|2.9.0|[Redis](https://redis.io/) 的 Java 客户端|[GitHub: Jedis](https://github.com/xetorthio/jedis)|
-|io.jsonwebtoken|jjwt|0.9.0|[JSON Web Token](https://jwt.io/) 的 Java 实现|[GitHub: Java JWT](https://github.com/jwtk/jjwt)|
-|io.springfox|springfox-swagger2|2.9.0|基于 [Swagger](https://swagger.io/) 的 API 文档生成工具|[Springfox Reference Documentation](http://springfox.github.io/springfox/docs/current/#maven)|
-|io.swagger|swagger-core|2.0.2|API 文档相关注解|&nbsp;|
-
-> Spring Boot 内置 [Tomcat](http://tomcat.apache.org/) 服务器，因此 Spring Boot 工程可打包成可执行并独立提供 HTTP 服务的 JAR 包。
-
-> JPA 即 [Java 持久化 API](http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)，[Hibernate](http://hibernate.org/) 是一个 ORM 框架，即 JPA 的实现，[Spring Data JPA](https://projects.spring.io/spring-data-jpa/) 通过使用 ORM（如 Hibernate）提供了数据仓库（Repository）层的实现。
-
-> Spring Boot 通过 `src/main/resources` 下的 `bootstrap.properties` 和 `application[-配置名].properties` 文件对应用进行配置，其中 `bootstrap.properties` 在应用启动前加载，用于指定应用的名称、配置服务器的连接等。
-
-> 配置中心服务向其他服务提供通用的配置文件，配置文件命名格式为 `应用名[-配置名].properties`，如 `wison-production.properties`，不指定配置名时代表默认配置。一个应用可以同时使用多个配置（通过 Java 的 `-D` 启动参数或 `bootstrap.properties` 中的 `spring.profiles.active` 配置），且存在默认配置时首先加载默认配置。
-
-> Eureka 是 Spring 的服务注册与服务自动发现系统，通过 OpenFeign 可以调用在 Eureka 注册中心注册的服务，从而实现服务间的调用。
-
-## 工程结构
-
-> 工程库包含 `master`、`development`、`wison-auth`、`wison-docs`、`wison-bpm` 等分支，分别为主、开发、用户认证子系统、文件管理子系统和业务流程管理子系统分支。
-
-> 请分别在子系统分支上开发相应的业务，并在发布前从开发分支拉取最新代码并将子系统分支上的代码合并到开发分支上，合并后请确保能够顺利通过编译再将代码推送到工程代码库。
-
-### 工程目录结构
-
-```tree
-/wison-parent
-  │
-  ├─ wison-config                      配置服务/服务注册中心
-  │   └─ src/main
-  │       ├─ java
-  │       │   └─ com/wison/config
-  │       │       └─ ConfigApp.java    配置服务/服务注册中心入口类
-  │       └─ resources                 配置文件等（配置文件也可选用 Git 作为仓库）
-  │
-  ├─ wison-base                        其他工程依赖的基础工程
-  │   └─ src/main
-  │       └─ java
-  │           └─ com/wison
-  │               ├─ util              工具类，如 Java Bean 处理，IP 地址处理等
-  │               ├─ constant          常量
-  │               ├─ annotation        注解
-  │               ├─ aspect            切面基类定义
-  │               ├─ dto               数据传输对象基类
-  │               ├─ entity            数据实体基类
-  │               ├─ vo                DTO/Entity 定义中使用的值对象，如枚举等
-  │               ├─ repository        自定义查询数据仓库基类
-  │               ├─ feign             OpenFeign 相关设置，如 HTTP 请求头设置等
-  │               ├─ filter            过滤器，如浏览器跨域请求头设置过滤器等
-  │               ├─ service           通用服务接口
-  │               ├─ exception         异常类
-  │               └─ response          HTTP 响应数据结构定义
-  │
-  ├─ wison-auth-api                    用户认证子系统的接口工程
-  │   └─ src/main
-  │       └─ java
-  │           └─ com/wison/auth
-  │               ├─ dto               用户认证业务接口数据传输对象（如用户创建表单、查询参数等）
-  │               ├─ entity            用户认证业务相关数据实体（如用户、组织、角色、访问令牌等）
-  │               └─ api               用户认证业务接口定义
-  │
-  ├─ wison-auth                        用户认证子系统的业务实现工程
-  │   └─ src/main
-  │       ├─ java
-  │       │   └─ com/wison/auth
-  │       │       ├─ domain/model      领域模型
-  │       │       │   ├─ repository    用户认证业务相关数据实体操作接口定义
-  │       │       │   └─ service       用户认证业务逻辑实现
-  │       │       ├─ controller        控制器（RESTful 接口定义）
-  │       │       ├─ config            Spring Boot 配置类
-  │       │       ├─ aspect            切面定义，如控制器调用权限检查等
-  │       │       └─ AuthApp.java      用户认证业务服务入口类
-  │       └─ resources
-  │           ├─ developer             开发说明
-  │           ├─ templates             FreeMarker 模板
-  │           └─ swagger/dist          API 文档前端静态资源
-  │
-  ├─ wison-docs-api                    文件管理子系统的接口工程
-  │   └─ ...
-  │
-  ├─ wison-docs                        文件管理子系统的业务实现工程
-  │   └─ ...
-  │
-  ├─ wison-bpm-api                     工作流子系统的接口更称
-  │   └─ ...
-  │
-  └─ wison-bpm                         工作流子系统的业务实现工程
-      └─ ...
-```
-
-> `wison-base` 工程提供基础数据结构及**业务无关**的处理逻辑。
-
-> `wison-auth-api`、`wison-docs-api`、`wison-bpm-api` 工程用于定义相应业务实现工程暴露的服务接口及相应的数据结构，从而使得其他服务可以调用相应的接口。
-
-> `wison-auth`、`wison-docs`、`wison-bpm` 是 Spring Boot 工程，实现具体业务，并最终作为 Web/SOAP 服务发布。
-
-> 开发过程中注意要将接口及数据实体的定义与业务逻辑实现分离成 API 工程及业务实现工程。
-
-### 工程间的依赖关系
-
-![工程间依赖关系](/img/dependencies.png)
-
-> 一个业务实现工程通过依赖另一个业务实现工程的 API 工程获得其暴露的服务接口及相关数据结构。例如，用户在使用文件管理子系统（`wison-docs`）的服务操作数据时需要进行身份认证及权限检查，此时文件管理子系统需要调用用户认证子系统（`wison-auth`）的服务，因此文件管理子系统需要依赖用户认证子系统的 API 工程（`wision-auth-api`）以获取相关接口信息及相关数据结构（数据传输对象、数据实体等信息）。
-
-## 开发流程
-
-### 应用配置
+## 应用配置
 
 Spring Boot 工程默认通过 `src/resources/` 下的 `application.properties` 文件对应用进行配置。
 
@@ -289,7 +86,7 @@ public class AccessTokenService implements AccessTokenInterface {
 }
 ```
 
-### Swagger 配置
+## Swagger 配置
 
 Swagger 的视图层位于 Spring Boot 工程的 `src/main/resources/swagger/dist/` 中，配置文件为 `src/main/resources/swagger.properties`。
 
@@ -355,7 +152,7 @@ public class Application implements WebMvcConfigurer {
 
 通过以上配置，应用启动后便可通过 `/docs/` 路径查看 API 文档，例如 `wison-auth` 的 API 文档路径为 [http://114.115.217.120:8810/docs/](http://114.115.217.120:8810/docs/)。
 
-### 数据传输对象（DTO）定义
+## 数据传输对象（DTO）定义
 
 数据传输对象是一个简单的 POJO 对象，用于描述客户端提交给服务器的数据结构，如 HTTP 请求 URL 中的查询参数（Query String Parameters）、HTTP 请求体数据（HTTP Request Body）等。
 
@@ -432,7 +229,7 @@ LIMIT 20, 10;
 
 > Spring Data JPA 数据仓库的查询接口接受一个类型为 `Pageable` 的分页参数，可通过 `PageDTO` 的 `toPageable()` 方法取得。
 
-### 数据实体（Entity）定义
+## 数据实体（Entity）定义
 
 数据实体用于与数据库中的表进行映射。
 
@@ -519,7 +316,7 @@ public class UserBasic extends BaseEntity {
 }
 ```
 
-### 数据仓库（Repository）接口定义
+## 数据仓库（Repository）接口定义
 
 Spring Data JPA 对数据仓库层进行了基本的封装，以便于对数据库数据进行操作。
 
@@ -637,7 +434,7 @@ public interface UserProfileRepository extends PagingAndSortingRepository<UserPr
 }
 ```
 
-### Redis 缓存操作
+## Redis 缓存操作
 
 要操作 Redis 数据库中的数据，首先需要定义一个 Redis 的配置类，通过该类读取 `application.properties` 中 Redis 服务器的连接配置并建立连接。
 
@@ -724,13 +521,13 @@ public class UserService implements UserInterface {
 }
 ```
 
-### 业务服务（Domain Service）
+## 业务服务（Domain Service）
 
 业务服务通过调用数据仓库接口对数据库数据、文件等信息进行一系列操作，实现具体业务逻辑。根据开发规范，应先为业务服务定义接口，在对其进行实现。
 
 关于配置信息读取、数据仓库接口绑定、Redis 连接注入等内容已在上文进行了说明。
 
-### 路由及控制器（Request Mapping &amp; Controller）
+## 路由及控制器（Request Mapping &amp; Controller）
 
 控制器中定义了系统向外界暴露的服务的实现。
 
@@ -827,7 +624,7 @@ public class UserController extends BaseController implements UserAPI {
 
 > `@ResponseStatus` 注解标明了请求被成功处理时的 HTTP 状态码，默认为 `200 OK`，创建新资源的请求应返回 `201 Created`。
 
-### 访问其他服务提供的接口
+## 访问其他服务提供的接口
 
 提供接口的服务需要将自己的启动类标注为 Eureka 客户端（`@EnableEurekaClient` 注解）并注册到 Eureka 注册中心。
 
@@ -908,7 +705,7 @@ public class FileController extends BaseController implements FileAPI {
 
 > 注意：此处的 `UserFeignAPI` 是 `wison-auth` 提供的用户账号相关接口的子集，排除了分页多条件查询方法 `JsonListResponseBody<UserProfile> search(UserCriteriaDTO criteria, PageDTO page);`（`UserAPI` 通过扩展 `UserFeignAPI` 定义该方法），这是因为没有被标注的对象参数会被 Feign 视为 Request Body，而一个请求只能定义一个 Request Body 参数。因此，通过 Feign 调用时，若需要多个查询参数，必须通过 `@RequestParam` 注解分别定义（而 Spring REST Controller 解析请求时可以将多个查询参数设置到一个对象中）。
 
-### 控制器权限检查（除 `wison-auth` 工程以外的业务实现工程）
+## 控制器权限检查（除 `wison-auth` 工程以外的业务实现工程）
 
 要实现控制器上的权限检查，需要依赖 `wison-auth-api` 工程，并在控制器实现的方法上使用 `@WithPrivilege` 注解。
 
@@ -950,428 +747,3 @@ public class FileController extends BaseController implements FileAPI {
 
 > `groupId` 和 `resourceId` 是否必要取决于具体业务逻辑。
 
-## 请求响应数据结构
-
-### 继承关系
-
-除非业务特殊需要，所有 HTTP 响应都应通过 `wison-base` 工程中定义的 `com.wison.response.JsonResponseBody` 或其派生类返回。
-
-<!-- <img src="./images/json-response-body.png" alt="请求响应数据结构继承关系" title="请求响应数据结构继承关系" class="figure" style="max-width: 675px;"> -->
-
-![请求响应数据结构继承关系](/img/json-response-body.png)
-
-> 响应数据结构的定义位于 `wison-base` 工程的 `com.wison.response` 包内。
-
-> `JsonResponseBody` 为基类，可用于描述不返回任何查询结果的响应。
-
-> `JsonDataResponseBody` 为一个抽象类，其派生类 `JsonObjectResponseBody` 和 `JsonListResponseBody` 分别用于描述返回单个数据和返回列表数据的响应。
-
-> 不仅仅是登录授权请求，任何需要认证信息的请求（要求设置 `Authorization` 请求头的请求）都可能返回用户访问令牌（`accessToken`）属性。当服务器响应数据中包含用户访问令牌时，客户端应该用取得的用户访问令牌更新本地缓存的用户访问令牌，并在后续请求中使用新的用户访问令牌。
-
-### 响应数据结构说明
-
-典型的响应数据的结构如下：
-
-```json
-{
-  "success": true,
-  "meta": {
-    "count": 47,
-    "pages": 5,
-    "pageNo": 3,
-    "pageSize": 10,
-    "isFirstPage": false,
-    "hasPreviousPage": true,
-    "hasNextPage": true,
-    "isLastPage": false
-  },
-  "links": {
-    "first": "/users?page.no=1&page.size=10&sort=id%3Adesc",
-    "previous": "/users?page.no=2&page.size=10&sort=id%3Adesc",
-    "self": "/users?page.no=3&page.size=10&sort=id%3Adesc",
-    "next": "/users?page.no=4&page.size=10&sort=id%3Adesc",
-    "last": "/users?page.no=5&page.size=10&sort=id%3Adesc"
-  },
-  "data": [
-    {
-      "id": "BMEDYJ5S1DY5PPQH",
-      "name": "guoq",
-      "createdBy": { "$ref": "BMEDYH6EP4Q97Z0M" }
-    },
-    {
-      "id": "BMEDYHJB21ULW3AY",
-      "name": "jinhy",
-      "createdBy": { "$ref": "BMEDYH6EP4Q97Z0M" }
-    },
-    ...
-  ],
-  "included": {
-    "BMEDYH6EP4Q97Z0M": {
-      "id": "BMEDYH6EP4Q97Z0M",
-      "type": "system",
-      "name": "System"
-    }
-  }
-}
-```
-
-> `success` 字段用于标明处理是否成功，当值为 `false` 时将返回描述错误信息的 `error` 字段。
-
-> 当查询列表时将会返回描述分页信息的 `meta` 字段。
-
-> `links` 中携带业务相关链接。
-
-> `data` 为返回的数据。当 `data` 中的一个字段的值为一个对象且包含（且仅包含）一个 `$ref` 字段时，表明该字段的值是对 `included` 中条目的引用。
-
-> `included` 为一个字典，用于提供 `data` 中引用的数据。
-
-### 设置引用数据
-
-当响应数据的 `data` 中存在数据引用时，应获取相应的数据并将其设置到 `included` 字典中。
-
-`JsonObjectResponseBody` 和 `JsonListResponseBody` 的实例提供一个 `setIncluded(EntityInterface)` 方法，用于取得指定数据实体的信息并将这些信息设置到 `included` 字段中。需要定义一个服务并实现 `wison-base` 的 `com.wison.service.EntityInterface` 接口，并在完成 `JsonObjectResponseBody` 或 `JsonListResponseBody` 的构造后将该服务的实例作为参数调用 `setIncluded(EntityInterface)` 方法。
-
-下面以 `wison-auth` 工程中 `com.wison.auth.controller.UserController` 的 `JsonListResponseBody<UserProfile> search(HttpServletRequest, HttpServletResponse, UserCriteriaDTO, PageDTO)` 为例。
-
-下面示例的目标是在完成数据（`BaseVersionedBizEntity` 的子类型）查询后，取得所有创建者、最后更新者及删除者等引用数据的信息，并将其设置到 `included` 字典中。
-
-首先，用户服务接口应继承 `EntityInterface` 接口：
-
-```java
-public interface UserInterface extends EntityInterface {
-    /* 方法定义 ... */
-}
-```
-
-在用户服务中实现 `setIncluded(Map<String, BaseEntity>, List<T>)` 方法：
-
-```java
-@Component
-public class UserService implements UserInterface {
-
-    /* 成员声明/构造方法/方法实现 ... */
-
-    @Override
-    public <T extends BaseEntity> Map<String, BaseEntity> setIncluded(
-        Map<String, BaseEntity> included,
-        List<T> entities
-    ) {
-
-        Set<String> userIdSet = new HashSet<>();
-        BaseVersionedBizEntity versionedBizEntity;
-
-        // 取得所有引用目标用户的 ID
-        for (T entity : entities) {
-            versionedBizEntity = (BaseVersionedBizEntity) entity;
-            userIdSet.add(versionedBizEntity.getCreatedBy());
-            userIdSet.add(versionedBizEntity.getLastModifiedBy());
-            userIdSet.add(versionedBizEntity.getDeletedBy());
-        }
-
-        // 查询引用目标用户的基本信息
-        List<UserBasic> users = (List<UserBasic>) userBasicRepository
-            .findAllById(new ArrayList<>(userIdSet));
-
-        // 将应用目标用户信息设置到 included 字典中
-        for (UserBasic userBasic : users) {
-            included.put(userBasic.getId(), userBasic);
-        }
-
-        return included;
-    }
-
-}
-```
-
-控制器路由处理方法中，在完成响应数据构造后调用 `setIncluded(EntityInterface)` 方法。
-
-```java
-@Api(description = "用户接口")
-@RestController
-@RequestMapping(value = "/users")
-public class UserController extends BaseController implements UserAPI {
-
-    /* 成员声明/构造方法 ... */
-
-    @Override
-    @ApiOperation("查询用户信息")
-    @RequestMapping(method = GET, consumes = ALL_VALUE, produces = APPLICATION_JSON_VALUE)
-    @ResponseStatus(OK)
-    public JsonListResponseBody<UserProfile> search(
-        HttpServletRequest request,
-        HttpServletResponse response,
-        UserCriteriaDTO criteria,
-        PageDTO page
-    ) {
-        Page<UserProfile> users = userService.search(criteria, page);
-
-        // 调用用户服务的 setIncluded(Map<String, BaseEntity>, List<T>) 方法
-        // 参数分别为 JsonListResponseBody 实例的 included 属性及查询结果（从 users 取得的 List<UserProfile> 实例）
-        return (new JsonListResponseBody<>(request, response, users)).setIncluded(userService);
-    }
-
-    /* 其他 REST 接口实现 ... */
-
-}
-```
-
-由于在 `BaseVersionedBizEntity` 中 `createdBy`、`lastModifiedBy`、`deletedBy` 的类型为字符串，因此需要设置为在将响应数据序列化为 JSON 时将这些字段重构为 `{"$ref": String}` 的形式。
-
-```java
-@MappedSuperclass
-public abstract class BaseVersionedBizEntity extends BaseBizEntity {
-
-    @Column(nullable = false)
-    @JsonIgnore
-    private String createdBy;
-
-    @Column(nullable = false)
-    @JsonIgnore
-    private String lastModifiedBy;
-
-    @JsonIgnore
-    private String deletedBy;
-
-    /* 其他属性声明 ... */
-
-    /* Getters/Setters ... */
-
-    @JsonProperty(value = "createdBy", access = READ_ONLY)
-    public ReferenceData getCreatedByRef() {
-        return this.createdBy == null
-            ? null
-            : new ReferenceData(this.createdBy);
-    }
-
-    @JsonProperty(value = "lastModifiedBy", access = READ_ONLY)
-    public ReferenceData getLastModifiedByRef() {
-        return this.lastModifiedBy == null
-            ? null
-            : new ReferenceData(this.lastModifiedBy);
-    }
-
-    @JsonProperty(value = "deletedBy", access = READ_ONLY)
-    public ReferenceData getDeletedByRef() {
-        return this.deletedBy == null
-            ? null
-            : new ReferenceData(this.deletedBy);
-    }
-
-}
-```
-
-> 上述代码通过 `@JsonIgnore` 注解忽略了 `createdBy`、`lastModifiedBy`、`deletedBy` 属性，并通过 `@JsonProperty` 注解重新定义了这三个属性返回的数据结构。
-
-> `ReferenceData` 在 `BaseEntity` 中定义，仅包含一个字段 `$ref`。
-
-## 表单数据校验
-
-为 DTO 的属性添加相应的注解，从而定义属性的有效性，如必要性、最大值、最小值、格式等。
-
-为控制器方法的相应参数添加 `@Valid` 注解，从而在方法执行前执行参数的有效性检查。
-
-### DTO 定义
-
-以用户登录认证信息为例。
-
-```java
-public class CredentialDTO extends BaseDTO {
-
-    @ApiModelProperty("登录用户名")
-    @NotNull(message = "{error.validation.authentication.username-is-required}")
-    private String username;
-
-    @ApiModelProperty("登录密码")
-    @NotNull(message = "{error.validation.authentication.password-is-required}")
-    private String password;
-
-    /* Getters & Setters */
-
-}
-```
-
-### 校验注解示例
-
-|注解|示例|说明|适用于|
-|:---|:---|:---|:---|
-|`@NotNull`|`@NotNull`|不可为 `null`|任何数据类型|
-|`@NotEmpty`|`@NotEmpty`|不可为 `null` 或空|字符串、`Collection`、`Map`、数组|
-|`@NotBlank`|`@NotBlank`|不可为 `null` 或空白|字符串|
-|`@Size`|`@Size(min = 3, max = 16)`|长度必须在 3（含）到 16（含）之间|字符串、`Collection`、`Map`、数组|
-|`@Min`|`@Min(0)`|不得小于 0|数值|
-|`@Max`|`@Max(16)`|不得大于 16|数值|
-|`@Pattern`|`@Pattern(regexp = "^[a-zA-Z][0-9a-zA-Z]{2,23}$")`|由英文字母及数字组成，且第一个字符必须为字母，且总长度必须在 3（含）到 24（含）位之间|字符串|
-|`@Email`|`@Email`|必须符合电子邮箱地址格式|字符串|
-
-> 更多内容请参照 `javax.validation.constraints` 下的注解的说明。
-
-### 控制器方法定义
-
-以用户登录认证接口为例。
-
-```java
-@Api(description = "用户认证/授权接口")
-@RestController
-public class AuthenticationController extends BaseController implements AuthenticationAPI {
-
-    /* 属性定义及构造方法 */
-
-    @Override
-    @ApiOperation(value = "用户登录认证", notes = "获取访问令牌。")
-    @RequestMapping(method = POST, value = "/authorizations", consumes = ALL_VALUE, produces = APPLICATION_JSON_VALUE)
-    @ResponseStatus(CREATED)
-    public JsonObjectResponseBody<UserProfile> authenticate(@RequestBody @Valid CredentialDTO credentials) {
-        /* 认证逻辑 */
-    }
-
-}
-```
-
-### 响应数据
-
-若用户输入的参数不符合要求将返回如下形式的数据：
-
-```json
-{
-    "success": false,
-    "status": 400,
-    "error": {
-        "code": "error.validation",
-        "status": 400,
-        "fields": [
-            {
-                "name": "username",
-                "type": "NotNull",
-                "message": "必须指定登录用户名。"
-            },
-            {
-                "name": "password",
-                "type": "NotNull",
-                "message": "必须指定登录密码。"
-            }
-        ]
-    }
-}
-```
-
-## 国际化（i18n）
-
-### 配置类
-
-国际化配置类为 `wison-base` 工程的 `com.wison.config.WebConfiguration`。
-
-### 消息定义文件
-
-根据配置，需要将消息定义文件置于相应工程的 `classpath`（即 `src/main/resources`）路径下，并将其命名为 `messages_LANGUAGE.properties`，其中 `LANGUAGE` 为语言代码，如 `en`、`zh_CN` 等。
-
-以 `wison-auth-api` 工程为例，`src/main/resources/message_zh_CN.properties` 为中文消息定义文件，`src/main/resources/messages.properties` 为默认消息定义文件。
-
-### 消息的引用
-
-以用户登录认证信息为例。
-
-```java
-public class CredentialDTO extends BaseDTO {
-
-    @ApiModelProperty("登录用户名")
-    @NotNull(message = "{error.validation.authentication.username-is-required}")
-    private String username;
-
-    @ApiModelProperty("登录密码")
-    @NotNull(message = "{error.validation.authentication.password-is-required}")
-    private String password;
-
-    /* Getters & Setters */
-
-}
-```
-
-```properties
-# messages.properties
-error.validation.authentication.username-is-required=username is required.
-error.validation.authentication.password-is-required=password is required.
-```
-
-```properties
-# messages_zh_CN.properties
-error.validation.authentication.username-is-required=必须指定登录用户名。
-error.validation.authentication.password-is-required=必须指定登录密码。
-```
-
-Spring 会根据客户端语言设置（`Accept-Language` 请求头）自动选择相应语言的消息。
-
-## 其他说明
-
-### 开发规范
-
-* 组件的调用顺序为 `Controller` &gt; `Service` &gt; `Repository`，切勿在 `Controller` 直接使用 `Repository` 操作数据。
-* 组件应通过在构造方法上使用 `@Autowired` 注解的方式注入（而不是在属性上使用 `@Autowired` 注解）。
-* 除特殊需要，Redis 中的条目都应设置生命期，且不宜过长。
-
-### Web 安全
-
-* 所有请求必须携带 `User-Agent` 请求头，否则将返回访问被拒绝错误。
-* 要求用户认证的接口必须携带 `Authorization` 请求头，否则将返回未认证错误。请求头形式为：
-```http
-Authorization: Bearer 用户访问令牌
-```
-* 所有无需用户认证但会产生新业务数据的请求（如获取短信验证码、发送验证邮件等）都应通过 CAPTCHA 校验（如要求用户识别图形验证码）进行保护。
-* 用户登录认证请求初始无需进行 CAPTCHA 校验，但多次尝试失败后应进行 CAPTCHA 校验保护。
-* 无论接口是否要求用户认证，客户端提供的用户访问令牌都必须有效。
-
-## 常见问题
-
-### Redis 持久化错误
-
-错误信息：
-
-> MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist on disk. Commands that may modify the data set are disabled. Please check Redis logs for details about the error.
-
-错误原因：未配置持久化文件。
-
-处理办法：配置持久化文件。
-
-```bash
-> CONFIG SET dir /var/data
-> CONFIG SET dbfilename redis.rdb
-```
-
-## 报表生成
-
-### Jaspersoft Studio 使用说明
-
-[下载 Jaspersoft Studio 使用说明](/file/jaspersoft-studio.zip)
-
-### 数据结构
-
-继承关系
-
-* 所有报表的数据传输对象都应继承自 `com.wison.report.dto.BaseReportDTO`
-* 所有带有列表的报表都应继承自 `com.wison.report.dto.BaseListReportDTO`
-* 所有生成报表的控制器都应继承自 `com.wison.report.controller.BaseReportController`，并通过 `generateReportFile(...)` 方法根据 `com.wison.report.dto.BaseReportDTO` 的实例生成报表文件
-
-> `com.wison.report.dto.BaseReportDTO` 将被转换为 `java.util.Map<String, Object>` 的实例作为参数（Parameters）传递给报表模板。
-
-> 当报表数据传输对象为 `com.wison.report.dto.BaseListReportDTO` 的实例时，其 `items` 字段将作为报表模板的默认数据源（Data Source）。
-
-设置报表名称（历史记录表示用）及编号前缀（用于生成报告编号）
-
-```java
-package com.wison.report.dto;
-
-import java.util.Date;
-
-public class PipelineFitUpInspectionApplicationPostDTO extends BaseReportDTO {
-
-    /* Properties */
-
-    public PipelineFitUpInspectionApplicationPostDTO() {
-        super("管线组对检验申请", "PFI-");
-    }
-
-    /* Getters and Setters */
-
-}
-```
-
-<footer><center>&copy; 2018 LiveBridge</center></footer>

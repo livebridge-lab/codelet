@@ -48,29 +48,36 @@
       "achievements/achievement-system-design"
     ]
   },
-  "core": {
+  "framework": {
     "快速开始": [
-      "core/index",
-      "core/quickstart"
+      "framework/index",
+      "framework/quickstart"
     ],
     "功能介绍": [
-      "core/functions",
-      "core/security"
+      "framework/function/list",
+      "framework/function/account",
+      "framework/function/organization",
+      "framework/function/message",
+      "framework/function/system",
+      "framework/function/security"
     ],
     "技术架构": [
-      "core/doc5"
+      "framework/doc5"
     ],
     "使用指南": [
-      "core/doc6"
+      "framework/installation",        
+      "framework/structure",  
+      "framework/develop_view",  
+      "framework/exchange_data_structure",
+      "framework/form_validation",
+      "framework/others",
+      "framework/doc9"
     ],
     "报表": [
-      "core/doc7"
+      "framework/doc7"
     ],
     "工作流": [
-      "core/doc8"
-    ],
-    "系统架构": [
-      "core/doc9"
+      "framework/doc8"
     ]
   }
 }
