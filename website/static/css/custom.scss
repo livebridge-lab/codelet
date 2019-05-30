@@ -92,6 +92,11 @@ a {
   color: $primary-color;
 }
 
+blockquote {
+  padding: 5px 30px 5px 15px;
+  font-size: 14px;
+}
+
 @media only screen and (max-width: 1023px) {
 
   .reactNavSearchWrapper { 
