@@ -1,6 +1,6 @@
 ---
 id: security
-title: 安全
+title: 安全（Security）
 ---
 
 很多 Web应用都缺少安全方面的考量，被安全工具扫描时漏洞百出。「Codelet基础框架」提供了完全涵盖 [OWASP 十大风险](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project) 的实现，解决了通用层面上的安全问题。WASP 是一个开源的、非盈利的全球性安全组织，致力于应用软件的安全研究。OWASP 被视为 Web 应用安全领域的权威参考。

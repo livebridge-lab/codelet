@@ -59,7 +59,8 @@
       "framework/function/organization",
       "framework/function/message",
       "framework/function/system",
-      "framework/function/security"
+      "framework/function/security",
+      "framework/function/operation" 
     ],
     "技术架构": [
       "framework/doc5"
