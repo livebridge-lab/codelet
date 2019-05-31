@@ -48,6 +48,12 @@
       "achievements/achievement-system-design"
     ]
   },
+  "statistics": {
+    "统计系统": [
+      "statistics/index",
+      "statistics/user-story"
+    ]
+  },
   "framework": {
     "快速开始": [
       "framework/index",
