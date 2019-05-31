@@ -56,7 +56,7 @@ class FrameworksSplash extends React.Component {
           <SplashTitle title={pageTitle} description={pageDescription} />
           <PromoSection>
             <Button href={siteConfig.repoUrl} target="_blank">立即体验</Button>
-            <Button href={siteConfig.repoUrl} target="_blank">核心功能</Button>
+            <Button href={siteConfig.repoUrl} target="_blank">功能介绍</Button>
             <Button href={siteConfig.repoUrl} target="_blank">技术栈</Button>
           </PromoSection>
         </div>
