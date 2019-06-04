@@ -72,7 +72,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `©${new Date().getFullYear()} CodeDance 辽ICP备8888888号-1`,
+  copyright: `©${new Date().getFullYear()} CodeDance 辽ICP备19008868号-2`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
@@ -92,15 +92,15 @@ const siteConfig = {
   // enableUpdateBy: true,
 
   // Show documentation's last update time.
-  // enableUpdateTime: true,
+  enableUpdateTime: true,
 
-  docsSideNavCollapsible: true,
+  docsSideNavCollapsible: false,
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
   demoUrl: 'http://demo.codelet.net/',
 
-  guideUrl: 'http://codelet.net/docs/framework/',
+  guideUrl: '/docs/framework/',
   
 
   scrollToTop: false, 

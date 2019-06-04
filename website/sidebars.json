@@ -54,37 +54,31 @@
       "statistics/user-story"
     ]
   },
-  "framework": {
+  "framework": {    
     "快速开始": [
       "framework/index",
-      "framework/quickstart"
+      "framework/quickstart/quickstart"
     ],
     "功能介绍": [
       "framework/function/list",
       "framework/function/account",
       "framework/function/organization",
       "framework/function/message",
-      "framework/function/system",
+      "framework/function/master_data",
       "framework/function/security",
       "framework/function/operation" 
     ],
     "技术架构": [
-      "framework/doc5"
+      "framework/architecture/architecture"
     ],
     "使用指南": [
-      "framework/installation",        
-      "framework/structure",  
-      "framework/develop_view",  
-      "framework/exchange_data_structure",
-      "framework/form_validation",
-      "framework/others",
-      "framework/doc9"
-    ],
-    "报表": [
-      "framework/doc7"
-    ],
-    "工作流": [
-      "framework/doc8"
+      "framework/guide/installation",        
+      "framework/guide/structure",  
+      "framework/guide/develop_view",  
+      "framework/guide/exchange_data_structure",
+      "framework/guide/form_validation",
+      "framework/guide/others",
+      "framework/guide/all_in_one"
     ]
   }
 }

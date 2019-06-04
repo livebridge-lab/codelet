@@ -1,6 +1,6 @@
 ---
-id: doc9
-title: 目录结构
+id: all_in_one
+title: All IN ONE
 ---
 ## 开发环境搭建
 
