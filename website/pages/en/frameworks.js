@@ -14,7 +14,7 @@ const scripts = [
   '/js/splash.js'
 ];
 
-const pageDescription = '「codelet基础框架」提供了高质量的开发系统所需的基础功能，功能包括认证、授权、消息、权限、人员、组织、安全等。帮助团队摆脱基础功能的困扰，将更多的精力投入到具体的业务功能中去';
+const pageDescription = '「codelet基础框架」提供了高质量的开发系统所需的基础功能，功能包括认证、授权、消息、权限、人员、组织、安全等。帮助团队摆脱基础功能的困扰，将更多的精力投入到具体的业务功能中去。';
 
 const pageTitle = '聚焦核心业务，摆脱基础设施困扰';
 
@@ -55,9 +55,8 @@ class FrameworksSplash extends React.Component {
         <div className="wrapper splash-wrapper">
           <SplashTitle title={pageTitle} description={pageDescription} />
           <PromoSection>
-            <Button href={siteConfig.repoUrl} target="_blank">立即体验</Button>
-            <Button href={siteConfig.repoUrl} target="_blank">功能介绍</Button>
-            <Button href={siteConfig.repoUrl} target="_blank">技术栈</Button>
+            <Button href={siteConfig.demoUrl} target="_blank">立即体验</Button>
+            <Button href={siteConfig.guideUrl} target="_blank">功能介绍</Button>
           </PromoSection>
         </div>
       </SplashContainer>

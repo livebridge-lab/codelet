@@ -55,7 +55,7 @@ class FeaturesSplash extends React.Component {
         <div className="wrapper splash-wrapper">
           <SplashTitle title={pageTitle} description={pageDescription} />
           <PromoSection>
-            <Button href={siteConfig.repoUrl} target="_blank">立即体验</Button>
+            <Button href={siteConfig.demoUrl} target="_blank">立即体验</Button>
           </PromoSection>
         </div>
       </SplashContainer>
