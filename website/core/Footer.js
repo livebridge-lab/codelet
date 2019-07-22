@@ -37,6 +37,11 @@ class Footer extends React.Component {
             <a>support@codedance.top</a>
             <a>400-123-4567</a>
             <a>周一至周五 9:00 ～ 18:00</a>
+            <div className="social">
+              <img src={this.props.config.baseUrl + 'img/wechat.png'} />
+              <img src={this.props.config.baseUrl + 'img/qq.png'} />
+              <img src={this.props.config.baseUrl + 'img/zhihu.png'} />
+            </div>
           </div>
           <div className="footerSection">
             <img className="code-dance-logo" src={this.props.config.baseUrl + 'img/code-dance.png'} />

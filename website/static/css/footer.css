@@ -1,8 +1,29 @@
 .code-dance-logo {
   width: 150px;
   margin-top: 3rem;
+  cursor: pointer;
 }
 
 .nav-footer .sitemap > div {
   min-width: auto;
+}
+
+.footerSection a {
+  cursor: pointer;
+}
+
+.footerSection .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.footerSection .social img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }

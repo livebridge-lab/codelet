@@ -16,7 +16,6 @@ const siteConfig = {
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
-
   disableHeaderTitle: true,
 
   // Used for publishing and more
@@ -36,7 +35,6 @@ const siteConfig = {
     // { href: 'https://github.com', label: '社区' },
     // { doc: 'doc4', label: 'API' },
     // { page: 'help', label: 'Help' },
-    // {blog: true, label: 'Blog'},
     // { search: true }
   ],
 

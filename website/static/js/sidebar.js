@@ -16,4 +16,10 @@ window.addEventListener('load', function () {
   if (isActive) {
     frameworksLink.parentNode.classList.add('siteNavItemActive');
   }
+  var mainLogo = document.getElementsByClassName('headerWrapper wrapper');
+  var websiteLink = mainLogo[0].querySelector('header a');
+  if (websiteLink) {
+    websiteLink.href = 'http://codelet.net/';
+  }
+
 });
