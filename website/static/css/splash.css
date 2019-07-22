@@ -73,7 +73,7 @@ body:not(.light) .navigationSlider .slidingNav ul li.siteNavGroupActive > a {
 }
 
 body:not(.light) .headerWrapper header .logo {
-  content: url("/img/codelet-white.svg");
+  content: url("/img/codelet-white.png");
   background-repeat: no-repeat;
 }
 

@@ -30,26 +30,26 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     // { doc: 'doc1', label: '产品' },
-    { page: 'frameworks', label: '基础框架' },
-    { page: 'business', label: '业务系统' },
-    { page: 'features', label: '功能模块' },
-    { href: 'https://github.com', label: '社区' },
+    // { page: 'frameworks', label: '基础框架' },
+    // { page: 'business', label: '业务系统' },
+    // { page: 'features', label: '功能模块' },
+    // { href: 'https://github.com', label: '社区' },
     // { doc: 'doc4', label: 'API' },
     // { page: 'help', label: 'Help' },
     // {blog: true, label: 'Blog'},
-    { search: true }
+    // { search: true }
   ],
 
-  algolia: {
-    apiKey: '651279d797a3f4e9d32fb68c56c62c8b',
-    indexName: 'menuet_proding',
-    algoliaOptions: { } // Optional, if provided by Algolia
-  },
+  // algolia: {
+  //   apiKey: '651279d797a3f4e9d32fb68c56c62c8b',
+  //   indexName: 'menuet_proding',
+  //   algoliaOptions: { } // Optional, if provided by Algolia
+  // },
 
   /* path to images for header/footer */
-  headerIcon: 'img/codelet.svg',
-  footerIcon: 'img/codelet.svg',
-  favicon: 'img/favicon-2.png',
+  headerIcon: 'img/codelet.png',
+  footerIcon: 'img/codelet.png',
+  favicon: 'img/favicon.png',
 
   /* Colors for website */
   colors: {
@@ -84,7 +84,7 @@ const siteConfig = {
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
-  
+
   // No .html extensions for paths.
   cleanUrl: true,
 
@@ -101,9 +101,8 @@ const siteConfig = {
   demoUrl: 'http://demo.codelet.net/',
 
   guideUrl: '/docs/framework/',
-  
 
-  scrollToTop: false, 
+  scrollToTop: false,
 
   separateCss: ['static/css/home', 'static/css/frameworks', 'static/css/splash', 'static/css/business', 'static/css/features']
 };

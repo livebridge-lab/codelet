@@ -19,29 +19,30 @@ class Footer extends React.Component {
     return (
       <footer className="nav-footer" id="footer">
         <section className="sitemap">
-          <div>
-            <h4>更多产品</h4>
-            <a href="https://codingex.proding.net/" target="_blank">
-              CodingEX - 开发规范与最佳实践
-            </a>
-            <a>
-              Softeaming - 软件团队协作工具
-            </a>
-            <a href="https://menuet.proding.net/" target="_blank">
-              Menuet - Node.js 后台轻量级框架
-            </a>
-            <a href="https://tangram.proding.net/" target="_blank">
-              NG-TANGRAM - Angular 桌面端 UI 组件库
-            </a>
+          <div className="footerSection">
+            <h4>产品功能</h4>
+            <a href="">基础框架</a>
+            <a href="">功能模块</a>
+            <a href="">业务系统</a>
+            <a href="">更新日志</a>
           </div>
-          <div className="company-logo">
-            <a className="code-dance">
-              <img src={this.props.config.baseUrl + 'img/code-dance.png'} />
-            </a>
+          <div className="footerSection">
+            <h4>服务与支持</h4>
+            <a href="">文档中心</a>
+            <a href="">社区</a>
+            <a href="">客户案例</a>
           </div>
-          
+          <div className="footerSection">
+            <h4>其他</h4>
+            <a>support@codedance.top</a>
+            <a>400-123-4567</a>
+            <a>周一至周五 9:00 ～ 18:00</a>
+          </div>
+          <div className="footerSection">
+            <img className="code-dance-logo" src={this.props.config.baseUrl + 'img/code-dance.png'} />
+          </div>
         </section>
-        <section className="copyright">{this.props.config.copyright}</section>
+        <section className="copyright">Copyright © 2019 代码跳动 版权所有 辽ICP备19008868号-2</section>
       </footer>
     );
   }

@@ -5,79 +5,79 @@
 @include button($primary-color, $primary-color-dark);
 
 @include header(
-  $color: $header-font-color, 
-  $border: $nav-border, 
-  $background: $white, 
+  $color: $header-font-color,
+  $border: $nav-border,
+  $background: $white,
   $height: 60px
 );
 
 @include header-nav(
   $color: $header-font-color,
   $color-active: $primary-color,
-  $background: transparent, 
+  $background: transparent,
   $background-active: transparent
 );
 
 @include search-bar(
-  $color: $header-font-color, 
-  $background: #f7f7f7, 
-  $background-focus: $white, 
-  $border: (1px solid transparent), 
-  $border-focus: (1px solid #e7e7e7), 
+  $color: $header-font-color,
+  $background: #f7f7f7,
+  $background-focus: $white,
+  $border: (1px solid transparent),
+  $border-focus: (1px solid #e7e7e7),
 );
 
-.fixedHeaderContainer header .headerTitleWithLogo { 
+.fixedHeaderContainer header .headerTitleWithLogo {
   font-size: 1em;
   font-weight: 400;
 }
 
-.headerWrapper header .logo { 
-  height: 30px;
+.headerWrapper header .logo {
+  height: 40px;
 }
 
-.navigationSlider .slidingNav ul { 
-  li { 
+.navigationSlider .slidingNav ul {
+  li {
     padding-left: 10px;
     padding-right: 10px;
   }
-  li > a { 
+  li > a {
     border-bottom: 2px solid transparent;
   }
-  
-  li.siteNavItemActive > a, 
+
+  li.siteNavItemActive > a,
   li.siteNavGroupActive > a {
     border-bottom: 2px solid $primary-color;
   }
 }
 
 @include footer(
-  $color: $header-font-color, 
-  $background: #fcfcfc, 
+  $color: $header-font-color,
+  $background: #fcfcfc,
   $border: $nav-border
 );
 
 @include footer-sitemap(
-  $color: #999, 
-  $color-hover: #777, 
+  $color: #999,
+  $color-hover: #777,
   $margin: 0 auto 3em,
   $padding: 0 20px
 );
 
 @include footer-copyright(
   $color: #bbb,
-  $font-size: 14px, 
+  $font-size: 14px,
   $border: (1px solid #efefef),
   $padding: 1em
 );
 
-.nav-footer .sitemap { 
-  h4 { 
+.nav-footer .sitemap {
+  h4 {
     font-weight: 400;
   }
 
-  .code-dance { 
+  .code-dance {
     margin-top: 3em;
-    img { 
+    img {
       width: 150px;
     }
   }
@@ -99,13 +99,13 @@ blockquote {
 
 @media only screen and (max-width: 1023px) {
 
-  .reactNavSearchWrapper { 
+  .reactNavSearchWrapper {
 
-    &.navSearchWrapper { 
+    &.navSearchWrapper {
       top: 12px;
     }
-    
-    input#search_input_react { 
+
+    input#search_input_react {
       line-height: 26px;
       border-radius: 26px;
     }
@@ -116,18 +116,18 @@ blockquote {
     width: calc(100% - 4em);
   }
 
-  .navigationSlider .slidingNav ul li:not(.reactNavSearchWrapper) { 
+  .navigationSlider .slidingNav ul li:not(.reactNavSearchWrapper) {
     padding-left: 0px;
     padding-right: 0px;
   }
 
-  .fixedHeaderContainer { 
+  .fixedHeaderContainer {
     height: 102px;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .nav-footer .sitemap .company-logo { 
+  .nav-footer .sitemap .company-logo {
     flex: 2;
     text-align: right;
   }

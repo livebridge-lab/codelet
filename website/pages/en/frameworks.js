@@ -138,13 +138,10 @@ class Frameworks extends React.Component {
           <link rel="stylesheet" type="text/css" href={url} key={url} />
         ))}
         <FrameworksSplash siteConfig={siteConfig} />
-        <Descriptions data={frameworks.why}></Descriptions>
-        <Descriptions data={frameworks.core}></Descriptions>
-        <div className="wrapper center more"><a className="button" href="/docs/framework/" target="_blank">查看更多</a></div>
         <FrameworksWrapper>
           <FrameworkGroup title="技术栈选型">
             {
-              frameworks.choice.map(data => 
+              frameworks.choice.map(data =>
                 <Framework
                   key={data.name}
                   name={data.name}
