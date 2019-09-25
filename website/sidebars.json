@@ -54,7 +54,10 @@
       "statistics/user-story"
     ]
   },
-  "framework": {    
+  "framework": {
+    "持续集成服务器搭建": [
+      "framework/01-building-continuous-integration-server/01-destination"
+    ],
     "快速开始": [
       "framework/index",
       "framework/quickstart/quickstart"
@@ -66,15 +69,15 @@
       "framework/function/message",
       "framework/function/master_data",
       "framework/function/security",
-      "framework/function/operation" 
+      "framework/function/operation"
     ],
     "技术架构": [
       "framework/architecture/architecture"
     ],
     "使用指南": [
-      "framework/guide/installation",        
-      "framework/guide/structure",  
-      "framework/guide/develop_view",  
+      "framework/guide/installation",
+      "framework/guide/structure",
+      "framework/guide/develop_view",
       "framework/guide/exchange_data_structure",
       "framework/guide/form_validation",
       "framework/guide/others",

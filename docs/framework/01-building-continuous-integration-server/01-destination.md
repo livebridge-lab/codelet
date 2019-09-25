@@ -1,5 +1,5 @@
 ---
-id: building-continuous-integration-server-todo-list
+id: building-continuous-integration-server-destination
 title: 作业内容
 ---
 
