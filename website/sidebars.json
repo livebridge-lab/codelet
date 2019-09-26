@@ -55,8 +55,14 @@
     ]
   },
   "framework": {
-    "持续集成服务器搭建": [
-      "framework/01-building-continuous-integration-server/01-destination"
+    "持续集成服务器环境搭建": [
+      "framework/building-ci-server/target-audience",
+      "framework/building-ci-server/destinations",
+      "framework/building-ci-server/install-components",
+      "framework/building-ci-server/configure-gitolite",
+      "framework/building-ci-server/configure-nexus",
+      "framework/building-ci-server/configure-consul",
+      "framework/building-ci-server/configure-jenkins"
     ],
     "快速开始": [
       "framework/index",

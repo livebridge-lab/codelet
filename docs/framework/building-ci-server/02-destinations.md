@@ -1,7 +1,9 @@
 ---
-id: building-continuous-integration-server-destination
-title: 作业内容
+id: destinations
+title: 作业目标
 ---
+
+## 作业内容及目标
 
 |实现目标|所使用的工具|
 |:---|:---|
@@ -12,4 +14,4 @@ title: 作业内容
 |代码提交到代码库后模块可自动部署到 Maven 库并重启相应服务|Jenkins|
 |提供服务注册中心，从而使开发者无需在本地启动他人负责的服务|Consul|
 
-![持续集成服务器部署](./assets/continuous-integration.png)
+![持续集成服务器部署](/img/framework/building-ci-server/02-01-deployment.png)
