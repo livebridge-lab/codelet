@@ -26,6 +26,14 @@
   $border-focus: (1px solid #e7e7e7),
 );
 
+body {
+  font-size: $font-size;
+}
+
+.singleRowMobileNav.navPusher {
+  padding-top: 60px;
+}
+
 .fixedHeaderContainer header .headerTitleWithLogo {
   font-size: 1em;
   font-weight: 400;
@@ -141,4 +149,17 @@ blockquote {
   .nav-footer .sitemap {
     max-width: 1180px;
   }
+}
+
+
+.docMainWrapper {
+  font-size: 14px;
+}
+
+.mainContainer {
+  margin: 0 12px;
+}
+
+.navListItem > .navItem {
+  font-size: 13px !important;
 }
