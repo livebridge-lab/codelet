@@ -43,13 +43,13 @@ title: 服务器环境搭建
 
 更新包系统软件包：
 
-```terminal
+```shell
 # yum update -y
 ```
 
 安装用于编译源代码的开发工具包：
 
-```terminal
+```shell
 # yum groupinstall -y 'Development Tools'
 ```
 
@@ -62,13 +62,13 @@ title: 服务器环境搭建
 
 新建用户 codelet：
 
-```terminal
+```shell
 # adduser -p Pas5w0rd -U codelet
 ```
 
 生成 SSH 密钥，设置文件名为“codelet”，不设置密码：
 
-```terminal
+```shell
 # su codelet
 $ ssh-keygen -t rsa -C "codelet"
 Enter file in which to save the key (/home/codelet/.ssh/id_rsa): /home/codelet/.ssh/codelet
@@ -82,7 +82,7 @@ Enter same passphrase again:
 
 将下载的压缩包解压并移动到 `/opt/` 下：
 
-```terminal
+```shell
 # tar -xf jdk-8u221-linux-x64.tar.gz
 # mv ./jdk1.8.0_211 /opt/jdk1.8.0_221
 # alternatives --install /usr/bin/java java /opt/jdk1.8.0_221/bin/java 2
@@ -90,13 +90,13 @@ Enter same passphrase again:
 
 若已安装其他版本 Java（或系统已自带 Open JDK 等 Java）执行以下命令并选择刚刚安装的版本：
 
-```terminal
+```shell
 # alternatives --config java
 ```
 
 安装 JDK 工具：
 
-```terminal
+```shell
 # alternatives --install /usr/bin/jar jar /opt/jdk1.8.0_221/bin/jar 2
 # alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_211/bin/javac 2
 # alternatives --set jar /opt/jdk1.8.0_221/bin/jar
@@ -105,7 +105,7 @@ Enter same passphrase again:
 
 将以下内容添加到文件 `~/.bashrc` 中：
 
-```text
+```bash
 export JAVA_HOME=/opt/jdk1.8.0_221
 export JRE_HOME=/opt/jdk1.8.0_221/jre
 export PATH=$PATH:/opt/jdk1.8.0_221/bin:/opt/jdk1.8.0_221/jre/bin
@@ -115,7 +115,7 @@ export PATH=$PATH:/opt/jdk1.8.0_221/bin:/opt/jdk1.8.0_221/jre/bin
 
 下载并安装 ImageMagick：
 
-```terminal
+```shell
 # wget https://imagemagick.org/download/linux/CentOS/x86_64/ImageMagick-7.0.8-66.x86_64.rpm
 # wget https://imagemagick.org/download/linux/CentOS/x86_64/ImageMagick-libs-7.0.8-66.x86_64.rpm
 # yum install -y ImageMagick-7.0.8-66.x86_64.rpm ImageMagick-libs-7.0.8-66.x86_64.rpm
@@ -127,7 +127,7 @@ export PATH=$PATH:/opt/jdk1.8.0_221/bin:/opt/jdk1.8.0_221/jre/bin
 
 下载并安装汇编编译器 YASM：
 
-```terminal
+```shell
 # wget http://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz
 # tar -xf yasm-1.3.0.tar.gz 
 # cd yasm-1.3.0
@@ -139,7 +139,7 @@ export PATH=$PATH:/opt/jdk1.8.0_221/bin:/opt/jdk1.8.0_221/jre/bin
 
 下载并安装 FFmpeg：
 
-```terminal
+```shell
 # wget https://ffmpeg.org/releases/ffmpeg-4.2.1.tar.bz2
 # tar -xf ffmpeg-4.2.1.tar.bz2
 # cd ffmpeg-4.2.1
@@ -153,13 +153,13 @@ export PATH=$PATH:/opt/jdk1.8.0_221/bin:/opt/jdk1.8.0_221/jre/bin
 
 Git 的编译依赖 perl 的 ExtUtils，若尚未安装则需要先执行以下命令：
 
-```terminal
+```shell
 # yum install perl-ExtUtils-CBuilder perl-ExtUtils-MakeMaker
 ```
 
 下载 Git 源代码并编译安装：
 
-```terminal
+```shell
 # wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.gz
 # tar -xf git-2.9.5
 # cd git-2.9.5
@@ -171,14 +171,14 @@ Git 的编译依赖 perl 的 ExtUtils，若尚未安装则需要先执行以下�
 
 ## 安装 Apache Maven
 
-```terminal
+```shell
 # yum install -y maven
 ```
 ## 安装 Gitolite
 
 克隆 Gitolite 代码库并将 Gitolite 安装到 ~/.gitolite 下：
 
-```terminal
+```shell
 $ git clone git://github.com/sitaramc/gitolite
 $ mkdir -p ~/.gitolite/{bin,logs}
 $ gitolite/install -to ~/.gitolite/bin
@@ -188,7 +188,7 @@ $ gitolite/install -to ~/.gitolite/bin
 
 初始化 Gitolite：
 
-```terminal
+```shell
 $ ~/.gitolite/bin/gitolite setup -pk ~/.ssh/codelet.pub
 ```
 
@@ -231,7 +231,7 @@ application-port=8910
 
 启动 Nexus Repository Manager OSS：
 
-```terminal
+```shell
 $ nexus-3.18.1-01/bin/nexus start
 ```
 
@@ -244,7 +244,7 @@ $ nexus-3.18.1-01/bin/nexus start
 
 下载 Linux / 64bit 版本的可执行文件的压缩包，解压并将可执行文件移动到 /usr/local/bin/ 下：
 
-```terminal
+```shell
 # wget https://releases.hashicorp.com/consul/1.6.1/consul_1.6.1_linux_amd64.zip
 # unzip consul_1.6.1_linux_amd64.zip
 # mv consul /usr/local/bin/
@@ -258,7 +258,7 @@ $ nexus-3.18.1-01/bin/nexus start
 
 启动 Jenkins 服务：
 
-```terminal
+```shell
 $ java -Dfile.encoding=UTF-8 \
        -XX:PermSize=256m -XX:MaxPermSize=512m -Xms256m -Xmx512m \
        -Djava.io.tmpdir=/var/codelet/jenkins/temp \
@@ -269,7 +269,7 @@ $ java -Dfile.encoding=UTF-8 \
 
 首先安装 Node.js 版本管理工具：
 
-```terminal
+```shell
 $ git clone https://github.com/nvm-sh/nvm.git ~/.nvm
 $ cd ~/.nvm
 $ git checkout v0.34.0
@@ -278,7 +278,7 @@ $ . nvm.sh
 
 将以下内容加入到 ~/.bashrc 中：
 
-```terminal
+```bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
@@ -286,6 +286,6 @@ export NVM_DIR="$HOME/.nvm"
 
 安装 Node.js：
 
-```terminal
+```shell
 $ nvm install v12.10.0
 ```

@@ -5,7 +5,7 @@ title: 创建代码库并配置访问控制权限
 
 在服务器上克隆 gitolite-admin：
 
-```terminal
+```shell
 $ git clone codelet@127.0.0.1:gitolite-admin
 ```
 

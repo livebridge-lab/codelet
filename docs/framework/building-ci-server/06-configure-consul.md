@@ -38,7 +38,7 @@ Consul 服务所使用的端口：
 
 生成服务之间通信密钥：
 
-```terminal
+```shell
 $ consul keygen
 6UWWdBHIvk5xAt6l0jejBn3cTerut3u5Ik03710rbJM=
 ```
@@ -103,7 +103,7 @@ $ consul keygen
 
 在 /var/codelet/consul 路径下执行以下命令启动服务器和客户端：
 
-```terminal
+```shell
 $ consul agent -server -bootstrap-expect=1 -node=server247 -bind=192.168.1.247 \
          -config-file=./config/server.json -ui > ./server-logs/server.log &
 $ consul agent -node=client247 -bind=192.168.1.247 \
@@ -118,7 +118,7 @@ http://192.168.1.247:8940
 
 在各业务模块的 Starter 模块的 application.yml 中设置服务注册中心信息，以 user-query-starter 为例：
 
-```text
+```yaml
 spring:
     cloud:
         consul:

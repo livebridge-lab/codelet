@@ -42,7 +42,7 @@ curl -I -X POST http://codelet:Pas5w0rd@127.0.0.1:8920/job/codelet-cloud-user/bu
 
 在每一个模块的根路径下添加一个名为 Jenkinsfile 的文件，并设置以下内容：
 
-```text
+```groovy
 pipeline {
     agent any
     stages {

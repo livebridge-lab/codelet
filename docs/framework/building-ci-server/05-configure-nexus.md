@@ -142,7 +142,7 @@ http://192.168.1.247:8910
 
 通过以上配置，在服务器上执行 Maven 部署命令时，编译结果将被发布到 Nexus Repository Manager OSS 的 codelet-cloud-public 中：
 
-```terminal
+```shell
 $ mvn clean deploy
 ```
 
