@@ -69,6 +69,17 @@
       "framework/building-dev-env/destinations",
       "framework/building-dev-env/mac-os-x"
     ],
+    "开发说明": [
+      "framework/development/target-audience",
+      "framework/development/project-structure",
+      "framework/development/design-pattern-and-rules",
+      "framework/development/step-by-step"
+    ],
+    "云原生": [
+      "framework/cloud-native/introduction",
+      "framework/cloud-native/docker",
+      "framework/cloud-native/kubernetes"
+    ],
     "快速开始": [
       "framework/index",
       "framework/quickstart/quickstart"
